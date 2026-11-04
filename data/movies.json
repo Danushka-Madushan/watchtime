@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt2017109",
+    "title": "Banshee",
+    "year": "2013–2016",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTkzNTA1MDI5M15BMl5BanBnXkFtZTcwNTY3NjAwOQ@@._V1_QL75_UY562_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt16358384",
     "title": "Tulsa King",
     "year": "2022–",
