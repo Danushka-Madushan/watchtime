@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt1951266",
+    "title": "The Hunger Games: Mockingjay - Part 2",
+    "year": "2015",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjQzNDI2NTU1Ml5BMl5BanBnXkFtZTgwNTAyMDQ5NjE@._V1_QL75_UX380_CR0,8,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt1951265",
     "title": "The Hunger Games: Mockingjay - Part 1",
     "year": "2014",
