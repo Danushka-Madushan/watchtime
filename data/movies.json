@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0318627",
+    "title": "Resident Evil: Apocalypse",
+    "year": "2004",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc1NTUxMzk0Nl5BMl5BanBnXkFtZTcwNDQ1MDIzMw@@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Horror",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt0120804",
     "title": "Resident Evil",
     "year": "2002",
