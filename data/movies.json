@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt1677720",
+    "title": "Ready Player One",
+    "year": "2018",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzVkMTgzODQtMWIwZC00NzE4LTgzZjYtMzAwM2I5OGZhNjE4XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt3791072",
     "title": "Rise of the Tomb Raider",
     "year": "2015",
