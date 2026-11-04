@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt3183660",
+    "title": "Fantastic Beasts and Where to Find Them",
+    "year": "2016",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjMxOTM1OTI4MV5BMl5BanBnXkFtZTgwODE5OTYxMDI@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Adventure",
+      "Family",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt2741602",
     "title": "The Blacklist",
     "year": "2013–2023",
