@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt3791072",
+    "title": "Rise of the Tomb Raider",
+    "year": "2015",
+    "type": "game",
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2U3MDcyYmUtNmMyYS00ZDU2LWFhZmMtMDAzYjRiZmQwYWE4XkEyXkFqcGdeQXVyOTQxNzM2MjY@._V1_SX300.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt13930822",
     "title": "Tomb Raider: The Legend of Lara Croft",
     "year": "2024–2025",
