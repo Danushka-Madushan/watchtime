@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt8111088",
+    "title": "The Mandalorian",
+    "year": "2019–2023",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjgxZGM0OWUtZGY1MS00MWRmLTk2N2ItYjQyZTI1OThlZDliXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt10826054",
     "title": "Masters of the Universe: Revelation",
     "year": "2021",
