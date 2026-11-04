@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0112159",
+    "title": "Neon Genesis Evangelion",
+    "year": "1995–1996",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZjZjZGI3ZDQtODNmZC00NjE0LTlmYTUtOTljMWI2YjNmMTQ0XkEyXkFqcGc@._V1_QL75_UY562_CR9,0,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt2012616",
     "title": "Motor City",
     "year": "2026",
