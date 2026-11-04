@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt1951264",
+    "title": "The Hunger Games: Catching Fire",
+    "year": "2013",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTAyMjQ3OTAxMzNeQTJeQWpwZ15BbWU4MDU0NzA1MzAx._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Romance"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt1392170",
     "title": "The Hunger Games",
     "year": "2012",
