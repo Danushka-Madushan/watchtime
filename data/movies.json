@@ -1,5 +1,17 @@
 [
   {
+    "id": "tt36586020",
+    "title": "Other Mommy",
+    "year": "2026",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWU2MzZlNmItYzVmYi00Y2Y4LWI4NTktNTg3NDE0MGE5NGRkXkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg",
+    "genres": [
+      "Horror"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt27165187",
     "title": "The End of Oak Street",
     "year": "2026",
