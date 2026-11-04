@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watchlist</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f5bea'/><path d='M38 30l34 20-34 20z' fill='white'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eceef1; --surface:#ffffff; --ink:#15181e; --muted:#6a7280; --line:#dde0e5;
+  --accent:#2f5bea; --accent-ink:#fff; --ok:#17995b; --danger:#d23f3f;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#14161a; --surface:#1d2025; --ink:#eceef1; --muted:#8b93a1; --line:#2b2f36;
+    --accent:#6f8cff; --accent-ink:#0e1118; --ok:#3ec585; --danger:#ff7676; color-scheme:dark;
+  }
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--bg)}
+body{font:15px/1.45 "DM Sans",system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--bg);min-height:100vh;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:var(--bg);padding:16px 0 12px}
+.bar{display:flex;gap:12px;align-items:center}
+h1{font-size:20px;font-weight:700;letter-spacing:-.01em;margin-right:8px}
+.search{flex:1;position:relative}
+.search input{width:100%;height:44px;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:0 14px;outline:none}
+.search input:focus{border-color:var(--accent)}
+.icon{width:44px;height:44px;border-radius:8px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;font-size:18px}
+.icon:hover{border-color:var(--accent)}
+.status{font-size:13px;color:var(--muted);min-height:20px;margin-top:8px}
+.status.err{color:var(--danger)}
+.results{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:4px 0 20px;overflow:hidden}
+.res{display:flex;gap:14px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line)}
+.res:last-child{border-bottom:0}
+.res img,.res .ph{width:40px;height:60px;border-radius:4px;object-fit:cover;background:var(--bg);flex:none}
+.res .t{flex:1;min-width:0}
+.res .t b{display:block;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.res .t span{color:var(--muted);font-size:13px}
+.btn{height:34px;padding:0 14px;border-radius:6px;font-weight:500;background:var(--accent);color:var(--accent-ink)}
+.btn:disabled{background:var(--bg);color:var(--muted);cursor:default}
+.btn.ghost{background:var(--bg);color:var(--ink)}
+.btn.ghost:hover{background:var(--line)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0 20px}
+.seg{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:3px}
+.seg button{padding:6px 14px;border-radius:5px;color:var(--muted);font-weight:500}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted);font-size:13px}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:20px 16px;padding-bottom:60px}
+.card .poster{position:relative;aspect-ratio:2/3;border-radius:6px;overflow:hidden;background:var(--line)}
+.card .poster img{width:100%;height:100%;object-fit:cover;display:block}
+.card.done .poster img{opacity:.45}
+.badge{position:absolute;top:8px;left:8px;background:var(--ok);color:#fff;font-size:12px;font-weight:700;padding:3px 8px;border-radius:4px}
+.card h3{font-size:14px;font-weight:500;margin-top:8px;line-height:1.3}
+.card p{font-size:12.5px;color:var(--muted);margin-top:2px}
+.acts{display:flex;gap:6px;margin-top:8px}
+.acts .btn{flex:1;font-size:13px;height:32px;padding:0 8px}
+.acts .x{flex:none;width:32px;padding:0;color:var(--danger)}
+.empty{text-align:center;color:var(--muted);padding:80px 0}
+dialog{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:24px;width:min(440px,92vw)}
+dialog::backdrop{background:rgba(10,12,16,.55)}
+dialog h2{font-size:17px;margin-bottom:4px}
+dialog p.hint{color:var(--muted);font-size:13px;margin-bottom:16px}
+label{display:block;font-size:13px;font-weight:500;margin:12px 0 4px}
+dialog input{width:100%;height:40px;border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:0 12px}
+.row{display:flex;gap:8px}
+.foot{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+@media (max-width:520px){h1{display:none}.grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="bar">
+    <h1>Watchlist</h1>
+    <div class="search"><input id="q" type="search" placeholder="Search IMDb for a movie or series" autocomplete="off" aria-label="Search"></div>
+    <button class="icon" id="gear" aria-label="Settings" title="Settings">⚙</button>
+  </div>
+  <div class="status" id="status" role="status"></div>
+</div></header>
+
+<main class="wrap">
+  <div id="results" hidden class="results"></div>
+  <div class="filters">
+    <div class="seg" id="seg">
+      <button data-v="all" aria-pressed="true">All</button>
+      <button data-v="todo" aria-pressed="false">To watch</button>
+      <button data-v="done" aria-pressed="false">Watched</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<dialog id="dlg">
+  <form method="dialog" id="form">
+    <h2>Settings</h2>
+    <p class="hint">Stored only in this browser. The token lets the page save your list to the repo.</p>
+    <label for="f-omdb">OMDb API key (free at omdbapi.com/apikey.aspx)</label>
+    <input id="f-omdb" autocomplete="off">
+    <label for="f-token">GitHub token (fine-grained, Contents: read and write on this repo)</label>
+    <input id="f-token" type="password" autocomplete="off">
+    <div class="row">
+      <div style="flex:1"><label for="f-owner">Repo owner</label><input id="f-owner" autocomplete="off"></div>
+      <div style="flex:1"><label for="f-repo">Repo name</label><input id="f-repo" autocomplete="off"></div>
+    </div>
+    <label for="f-branch">Branch (leave empty for default)</label>
+    <input id="f-branch" autocomplete="off">
+    <div class="foot">
+      <button type="button" class="btn ghost" id="cancel">Cancel</button>
+      <button class="btn" value="save">Save settings</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+const PATH = 'data/movies.json';
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// ---------- config ----------
+function guessRepo() {
+  const m = location.hostname.match(/^(.+)\.github\.io$/);
+  if (!m) return {owner:'', repo:''};
+  const seg = location.pathname.split('/').filter(Boolean)[0];
+  return {owner:m[1], repo: seg || location.hostname};
+}
+function loadCfg() {
+  let c = {};
+  try { c = JSON.parse(localStorage.getItem('watchlist-cfg') || '{}'); } catch {}
+  const g = guessRepo();
+  return {omdb:'', token:'', branch:'', owner:g.owner, repo:g.repo, ...c};
+}
+let cfg = loadCfg();
+const saveCfg = () => { try { localStorage.setItem('watchlist-cfg', JSON.stringify(cfg)); } catch {} };
+
+// ---------- state ----------
+let movies = [], view = 'all', genre = 'all', searchTimer, saveChain = Promise.resolve();
+
+function setStatus(msg, err) { const s = $('status'); s.textContent = msg || ''; s.className = 'status' + (err ? ' err' : ''); }
+
+// ---------- GitHub storage ----------
+const api = () => `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${PATH}`;
+const ghHeaders = extra => ({Authorization:`Bearer ${cfg.token}`, 'X-GitHub-Api-Version':'2022-11-28', ...extra});
+const refQ = () => cfg.branch ? `?ref=${encodeURIComponent(cfg.branch)}` : '';
+const b64 = str => { const b = new TextEncoder().encode(str); let s=''; b.forEach(x => s += String.fromCharCode(x)); return btoa(s); };
+
+async function load() {
+  try {
+    let res;
+    if (cfg.token && cfg.owner && cfg.repo) {
+      res = await fetch(api() + refQ(), {headers: ghHeaders({Accept:'application/vnd.github.raw+json'}), cache:'no-store'});
+      if (res.status === 404) { movies = []; render(); return; }
+    } else {
+      res = await fetch(PATH + '?t=' + Date.now(), {cache:'no-store'});
+    }
+    if (!res.ok) throw new Error('Could not load list (' + res.status + ')');
+    movies = await res.json();
+    setStatus('');
+  } catch (e) { setStatus(e.message, true); }
+  render();
+}
+
+function persist(message) {
+  if (!cfg.token || !cfg.owner || !cfg.repo) { setStatus('Add a GitHub token in settings to save changes.', true); return; }
+  const snapshot = JSON.stringify(movies, null, 2) + '\n';
+  saveChain = saveChain.then(async () => {
+    setStatus('Saving…');
+    try {
+      let sha;
+      const g = await fetch(api() + refQ(), {headers: ghHeaders({Accept:'application/vnd.github+json'}), cache:'no-store'});
+      if (g.ok) sha = (await g.json()).sha; else if (g.status !== 404) throw new Error('GitHub error ' + g.status);
+      const body = {message, content: b64(snapshot), sha};
+      if (cfg.branch) body.branch = cfg.branch;
+      const p = await fetch(api().replace(/\?.*$/, ''), {method:'PUT', headers: ghHeaders({Accept:'application/vnd.github+json','Content-Type':'application/json'}), body: JSON.stringify(body)});
+      if (!p.ok) throw new Error((await p.json().catch(() => ({}))).message || 'Save failed (' + p.status + ')');
+      setStatus('Saved to repo');
+      setTimeout(() => { if ($('status').textContent === 'Saved to repo') setStatus(''); }, 2500);
+    } catch (e) { setStatus(e.message, true); }
+  });
+}
+
+// ---------- OMDb (IMDb data) ----------
+async function omdb(params) {
+  if (!cfg.omdb) throw new Error('Add your OMDb API key in settings.');
+  const u = new URL('https://www.omdbapi.com/');
+  Object.entries({apikey:cfg.omdb, ...params}).forEach(([k,v]) => u.searchParams.set(k, v));
+  const r = await fetch(u);
+  const j = await r.json();
+  if (j.Response === 'False' && j.Error !== 'Movie not found!' && j.Error !== 'Too many results.') throw new Error(j.Error);
+  return j;
+}
+
+async function doSearch(q) {
+  const box = $('results');
+  if (q.length < 2) { box.hidden = true; return; }
+  try {
+    setStatus('Searching…');
+    const j = await omdb({s:q});
+    setStatus('');
+    const list = j.Search || [];
+    box.hidden = false;
+    if (!list.length) { box.innerHTML = '<div class="res"><div class="t"><b>No matches</b><span>Try a different spelling.</span></div></div>'; return; }
+    box.innerHTML = list.map(m => {
+      const added = movies.some(x => x.id === m.imdbID);
+      const img = m.Poster && m.Poster !== 'N/A' ? `<img src="${esc(m.Poster)}" alt="" loading="lazy">` : '<div class="ph"></div>';
+      return `<div class="res">${img}<div class="t"><b>${esc(m.Title)}</b><span>${esc(m.Year)} · ${m.Type === 'series' ? 'Series' : 'Movie'}</span></div>
+        <button class="btn" data-add="${esc(m.imdbID)}" ${added ? 'disabled' : ''}>${added ? 'On your list' : 'Add'}</button></div>`;
+    }).join('');
+  } catch (e) { setStatus(e.message, true); }
+}
+
+async function add(id, btn) {
+  btn.disabled = true; btn.textContent = 'Adding…';
+  try {
+    const d = await omdb({i:id});
+    if (d.Response === 'False') throw new Error(d.Error);
+    movies.unshift({
+      id, title:d.Title, year:d.Year, type:d.Type,
+      poster: d.Poster && d.Poster !== 'N/A' ? d.Poster : '',
+      genres: d.Genre && d.Genre !== 'N/A' ? d.Genre.split(',').map(s => s.trim()) : [],
+      watched:false, added:new Date().toISOString().slice(0,10)
+    });
+    btn.textContent = 'On your list';
+    render();
+    persist(`Add ${d.Title}`);
+  } catch (e) { btn.disabled = false; btn.textContent = 'Add'; setStatus(e.message, true); }
+}
+
+// ---------- render ----------
+function render() {
+  const genres = [...new Set(movies.flatMap(m => m.genres || []))].sort();
+  if (genre !== 'all' && !genres.includes(genre)) genre = 'all';
+  $('chips').innerHTML = genres.length ? ['all', ...genres].map(g =>
+    `<button class="chip" data-g="${esc(g)}" aria-pressed="${g === genre}">${g === 'all' ? 'All genres' : esc(g)}</button>`).join('') : '';
+  document.querySelectorAll('#seg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === view));
+
+  const list = movies.filter(m => (view === 'all' || (view === 'done') === !!m.watched) && (genre === 'all' || (m.genres || []).includes(genre)));
+  $('grid').innerHTML = list.length ? list.map(m => `
+    <article class="card ${m.watched ? 'done' : ''}">
+      <div class="poster">${m.poster ? `<img src="${esc(m.poster)}" alt="${esc(m.title)} poster" loading="lazy">` : ''}${m.watched ? '<span class="badge">Watched</span>' : ''}</div>
+      <h3>${esc(m.title)}</h3>
+      <p>${esc(m.year)}${m.genres?.length ? ' · ' + esc(m.genres.slice(0,2).join(', ')) : ''}</p>
+      <div class="acts">
+        <button class="btn ${m.watched ? 'ghost' : ''}" data-w="${esc(m.id)}">${m.watched ? 'Undo' : 'Mark watched'}</button>
+        <button class="btn ghost x" data-x="${esc(m.id)}" aria-label="Remove ${esc(m.title)}" title="Remove">✕</button>
+      </div>
+    </article>`).join('')
+    : `<div class="empty" style="grid-column:1/-1">${movies.length ? 'Nothing matches these filters.' : 'Your list is empty. Search above to add your first title.'}</div>`;
+}
+
+// ---------- events ----------
+$('q').addEventListener('input', e => { clearTimeout(searchTimer); const v = e.target.value.trim(); searchTimer = setTimeout(() => doSearch(v), 350); });
+$('q').addEventListener('keydown', e => { if (e.key === 'Escape') { e.target.value = ''; $('results').hidden = true; } });
+$('results').addEventListener('click', e => { const b = e.target.closest('[data-add]'); if (b) add(b.dataset.add, b); });
+$('seg').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { view = b.dataset.v; render(); } });
+$('chips').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { genre = b.dataset.g; render(); } });
+$('grid').addEventListener('click', e => {
+  const w = e.target.closest('[data-w]'), x = e.target.closest('[data-x]');
+  if (w) { const m = movies.find(m => m.id === w.dataset.w); m.watched = !m.watched; render(); persist(`${m.watched ? 'Watched' : 'Unwatch'} ${m.title}`); }
+  if (x) { const m = movies.find(m => m.id === x.dataset.x); if (!confirm(`Remove “${m.title}” from your list?`)) return; movies = movies.filter(y => y !== m); render(); persist(`Remove ${m.title}`); }
+});
+
+const F = {omdb:'f-omdb', token:'f-token', owner:'f-owner', repo:'f-repo', branch:'f-branch'};
+function openSettings() { for (const k in F) $(F[k]).value = cfg[k] || ''; $('dlg').showModal(); }
+$('gear').onclick = openSettings;
+$('cancel').onclick = () => $('dlg').close();
+$('form').addEventListener('submit', () => {
+  for (const k in F) cfg[k] = $(F[k]).value.trim();
+  saveCfg(); load();
+});
+
+// ---------- start ----------
+load().then(() => { if (!cfg.omdb || !cfg.token) setStatus('First time here? Open settings (⚙) to add your OMDb key and GitHub token.'); });
+</script>
+</body>
+</html>
