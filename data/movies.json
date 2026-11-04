@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt9288030",
+    "title": "Reacher",
+    "year": "2022–",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMmE0YTA3MTItMjhiNC00MGQ3LTllZDktNGNiZWY1OWFmNmM1XkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt1877830",
     "title": "The Batman",
     "year": "2022",
