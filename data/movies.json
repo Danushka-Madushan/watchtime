@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt30460310",
+    "title": "Spider-Noir",
+    "year": "2026",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjU3NjEwNTItMzc1Mi00Y2QyLTljNDItOTQ4YjU4NjZjN2EyXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt1753496",
     "title": "Resident Evil: Damnation",
     "year": "2012",
