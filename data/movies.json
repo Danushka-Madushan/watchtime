@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt1160419",
+    "title": "Dune",
+    "year": "2021",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWIyNmU5MGYtZDZmNi00ZjAwLWJlYjgtZTc0ZGIxMDE4ZGYwXkEyXkFqcGc@._V1_QL75_UY562_CR1,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt2017109",
     "title": "Banshee",
     "year": "2013–2016",
