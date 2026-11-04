@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt12324366",
+    "title": "Percy Jackson and the Olympians",
+    "year": "2023–",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTI3YmIzNzYtOTcwNy00ZTZiLTg5NmQtMTUyNGY1ZWVmZDJiXkEyXkFqcGc@._V1_QL75_UY562_CR37,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Family"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt1854564",
     "title": "Percy Jackson: Sea of Monsters",
     "year": "2013",
