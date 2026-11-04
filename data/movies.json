@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt2012616",
+    "title": "Motor City",
+    "year": "2026",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGFmNTJkNzctNDc2Zi00ZWMxLWIzNzktNDQxMzU3ZGVkZTRjXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt1856101",
     "title": "Blade Runner 2049",
     "year": "2017",
