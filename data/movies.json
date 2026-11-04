@@ -1,5 +1,17 @@
 [
   {
+    "id": "tt38773219",
+    "title": "Ebenezer: A Christmas Carol",
+    "year": "2026",
+    "type": "movie",
+    "poster": "",
+    "genres": [
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt28996126",
     "title": "Nobody 2",
     "year": "2025",
