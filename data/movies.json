@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt7569592",
+    "title": "Chilling Adventures of Sabrina",
+    "year": "2018–2020",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTQyMDYwNDMyOV5BMl5BanBnXkFtZTgwMjM4NTIzNjM@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Horror"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt32268691",
     "title": "Onslaught",
     "year": "2026",
