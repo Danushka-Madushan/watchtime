@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt1855325",
+    "title": "Resident Evil: Retribution",
+    "year": "2012",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNGJhZTNlNmYtN2YwNi00OWQwLThhNTUtY2NlOTYwZTQ5ZjNiXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Horror",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt1220634",
     "title": "Resident Evil: Afterlife",
     "year": "2010",
