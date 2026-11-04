@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt10826054",
+    "title": "Masters of the Universe: Revelation",
+    "year": "2021",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTcwZDZmMmQtNTJiNi00NGZlLTljOGItZjFkMzgzZGI3ZDY3XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "watched": false,
+    "added": "2026-11-04"
+  },
+  {
     "id": "tt27052533",
     "title": "Masters of the Universe: Revolution",
     "year": "2024",
