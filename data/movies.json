@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0472043",
+    "title": "Apocalypto",
+    "year": "2006",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzJkNzI3ZmEtZmRhOS00YTM1LWI3OTAtZmVjZmNkODIxNmFmXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-05"
+  },
+  {
     "id": "tt1201607",
     "title": "Harry Potter and the Deathly Hallows: Part 2",
     "year": "2011",
