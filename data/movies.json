@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt7991608",
+    "title": "Red Notice",
+    "year": "2021",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOGNjNGQ3MmItYTM5NS00NjBiLWI0ZTItZDE5ZjQyNjg3ODBjXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Thriller"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt11126994",
     "title": "Arcane",
     "year": "2021–2024",
