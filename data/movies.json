@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt5114356",
+    "title": "Legion",
+    "year": "2017–2019",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYmM4NDNlYzctNDgxYi00OWU5LTg4NTctOWE2NzMyMjgxY2QwXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt23112594",
     "title": "VisionQuest",
     "year": "2026",
