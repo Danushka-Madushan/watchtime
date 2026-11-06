@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0259324",
+    "title": "Ghost Rider",
+    "year": "2007",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzIyNDE5ODI1OV5BMl5BanBnXkFtZTcwNTIyNDE0MQ@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Thriller"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt31036941",
     "title": "Jurassic World: Rebirth",
     "year": "2025",
