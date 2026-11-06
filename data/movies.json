@@ -1,5 +1,47 @@
 [
   {
+    "id": "tt2293002",
+    "title": "Ben 10: Omniverse",
+    "year": "2012–2014",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjE1N2EzYzQtMWExOC00N2FjLWEwYjMtNjdlNWUwYzQwMzEyXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
+    "id": "tt1622696",
+    "title": "Ben 10: Ultimate Alien",
+    "year": "2010–2012",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWIxMjZmNTQtNzkxZi00NTU5LThhOGYtODEyZGYyNDdkNTQxXkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
+    "id": "tt1192169",
+    "title": "Ben 10: Alien Force",
+    "year": "2008–2010",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOGQ5YWFjYjItODE5OC00ZDQxLTk5ZmYtNzY0YzM4NjIyMWFlXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt0760437",
     "title": "Ben 10",
     "year": "2005–2008",
