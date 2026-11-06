@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0398286",
+    "title": "Tangled",
+    "year": "2010",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTAxNDYxMjg0MjNeQTJeQWpwZ15BbWU3MDcyNTk2OTM@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt4520988",
     "title": "Frozen II",
     "year": "2019",
