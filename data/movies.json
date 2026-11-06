@@ -1,5 +1,33 @@
 [
   {
+    "id": "tt3741700",
+    "title": "Godzilla: King of the Monsters",
+    "year": "2019",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDVhMjk2OGUtYzYxNS00NzBjLTk5YTItYzI0ZjgzNjY1NmI0XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
+    "id": "tt5034838",
+    "title": "Godzilla vs. Kong",
+    "year": "2021",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjZlYjUwZjItZmQ1ZS00NDU2LWFhNWMtMGRmMmZiMzliY2NhXkEyXkFqcGc@._V1_QL75_UY562_CR2,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt0831387",
     "title": "Godzilla",
     "year": "2014",
