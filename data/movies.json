@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt1062161",
+    "title": "The Hive",
+    "year": "2008",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYmVjNjk2ZTYtMDUyOC00ZDY4LWFjNDgtYTMyYzJmOGViYjI4XkEyXkFqcGc@._V1_SX300.jpg",
+    "genres": [
+      "Action",
+      "Horror",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt2283336",
     "title": "Men in Black: International",
     "year": "2019",
