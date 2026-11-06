@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt6660498",
+    "title": "Devilman: Crybaby",
+    "year": "2018",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjRjOGI4M2YtMGQ4NC00OTk3LTg4MWItYjBjYzNiOGI0Y2ZkXkEyXkFqcGc@._V1_QL75_UY562_CR9,0,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt1332653",
     "title": "The Day of the Triffids",
     "year": "2009",
