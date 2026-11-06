@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0358082",
+    "title": "Robots",
+    "year": "2005",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDYyNjY1NjY1M15BMl5BanBnXkFtZTcwNjk5MDczMw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt3042408",
     "title": "Who Am I",
     "year": "2014",
