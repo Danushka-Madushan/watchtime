@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0844653",
+    "title": "Legend of the Seeker",
+    "year": "2008–2010",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BODcyNTM4MjUwOF5BMl5BanBnXkFtZTcwNTE5Mjc2Nw@@._V1_QL75_UY562_CR21,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt1199099",
     "title": "Merlin",
     "year": "2008–2012",
