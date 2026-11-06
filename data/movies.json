@@ -1,5 +1,33 @@
 [
   {
+    "id": "tt0119567",
+    "title": "The Lost World: Jurassic Park",
+    "year": "1997",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMGI3NDg5N2ItZGIyZi00ZWNkLWFlODUtZDA1Y2Q1M2U4NGM2XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
+    "id": "tt0369610",
+    "title": "Jurassic World",
+    "year": "2015",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzBhNzlkM2UtZTQyOC00NjUyLTkzMmMtNDQ1YTM5N2NmMGE5XkEyXkFqcGc@._V1_QL75_UX380_CR0,20,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt0107290",
     "title": "Jurassic Park",
     "year": "1993",
