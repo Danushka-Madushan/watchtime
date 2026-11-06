@@ -401,7 +401,7 @@
       "Crime",
       "Fantasy"
     ],
-    "watched": false,
+    "watched": true,
     "added": "2026-11-06"
   },
   {
@@ -415,7 +415,7 @@
       "Adventure",
       "Comedy"
     ],
-    "watched": false,
+    "watched": true,
     "added": "2026-11-06"
   },
   {
@@ -429,7 +429,7 @@
       "Drama",
       "Mystery"
     ],
-    "watched": false,
+    "watched": true,
     "added": "2026-11-06"
   },
   {
