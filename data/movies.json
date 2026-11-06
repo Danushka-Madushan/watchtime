@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt11126994",
+    "title": "Arcane",
+    "year": "2021–2024",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjA2NzhlMDItNWRmZC00MzRjLWE3ZjAtZjBlZDAwOWY2ODdjXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt6660498",
     "title": "Devilman: Crybaby",
     "year": "2018",
