@@ -1,313 +1,302 @@
 <div align="center">
-  <img src="./public/favicon.svg" width="72" height="72" alt="WatchTime Logo" />
+  <img src="./public/favicon.svg" alt="WatchTime Logo" width="88" height="88" />
   <h1>WatchTime</h1>
-  <p><strong>Personal movie &amp; series watchlist synchronized to your GitHub repository</strong></p>
+  <p><strong>A sleek, high-performance personal movie &amp; series watchlist synchronized directly with your GitHub repository.</strong></p>
+
+  <p>
+    <a href="https://Danushka-Madushan.github.io/watchtime/"><strong>Explore the Live Application »</strong></a>
+  </p>
+
+  <p>
+    <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-19-61dafb.svg?style=flat-square&logo=react&logoColor=black" alt="React 19" /></a>
+    <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-6-646cff.svg?style=flat-square&logo=vite&logoColor=white" alt="Vite 6" /></a>
+    <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-Strict_Zero_Any-3178c6.svg?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript Strict" /></a>
+    <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-v4-06b6d4.svg?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS v4" /></a>
+    <a href="https://github.com/Danushka-Madushan/watchtime/actions/workflows/deploy.yml"><img src="https://img.shields.io/badge/GitHub_Actions-Pages_Deployed-2088FF.svg?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Pages Deployment" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License MIT" /></a>
+  </p>
+
+  <p>
+    <a href="#-key-features">Key Features</a> •
+    <a href="#-live-demo--deployment">Live Demo</a> •
+    <a href="#-architecture">Architecture</a> •
+    <a href="#-getting-started">Getting Started</a> •
+    <a href="#-configuration-guide">Configuration</a> •
+    <a href="#-security--hardening">Security</a> •
+    <a href="#-type-safety">Type Safety</a>
+  </p>
 </div>
 
-[![React 19](https://img.shields.io/badge/React-19-61dafb.svg?logo=react&logoColor=black)](https://react.dev/)
-[![Vite 6](https://img.shields.io/badge/Vite-6-646cff.svg?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TypeScript Strict](https://img.shields.io/badge/TypeScript-Strict_Zero_Any-3178c6.svg?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-06b6d4.svg?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+---
 
-A modern, high-performance personal movie and series watchlist application. WatchTime synchronizes seamlessly with your private GitHub repository (`data/movies.json`) or operates completely offline in local storage mode, enriched with real-time movie metadata from the OMDb API.
+## 📖 Overview
 
-Originally a single-file prototype, WatchTime has been re-architected into a modular, strictly typed Vite + React 19 single-page application with Tailwind CSS v4 design tokens, Lucide React iconography, and client-side security hardening.
+**WatchTime** is a lightweight, privacy-focused media tracker designed for movie and television enthusiasts. Built entirely as a modern single-page client without requiring a dedicated backend server, WatchTime persists your collection directly to a `data/movies.json` file in your personal GitHub repository.
+
+Enriched with real-time metadata from the OMDb API, WatchTime offers instant search with debounced autocomplete, optimistic status toggling, detailed modal previews, custom poster editing, and responsive multi-column layouts across desktop, tablet, and mobile.
 
 ---
 
-## Table of Contents
+## 🚀 Live Demo & Deployment
 
-1. [Key Features & Tour](#key-features--tour)
-2. [Technology Stack](#technology-stack)
-3. [Architecture & Directory Layout](#architecture--directory-layout)
-4. [Getting Started](#getting-started)
-5. [Available Scripts](#available-scripts)
-6. [Credential Configuration Guide](#credential-configuration-guide)
-   - [OMDb API Key](#1-omdb-api-key-setup)
-   - [GitHub Personal Access Token (PAT)](#2-github-personal-access-token-pat-setup)
-   - [Local Storage Fallback Mode](#3-local-storage-fallback-mode)
-7. [Client-Side Security Hardening](#client-side-security-hardening)
-8. [Type Safety & Zero-Any Policy](#type-safety--zero-any-policy)
+The application is deployed continuously to GitHub Pages using an automated GitHub Actions CI/CD pipeline.
+
+- **Production URL**: [https://Danushka-Madushan.github.io/watchtime/](https://Danushka-Madushan.github.io/watchtime/)
+- **Repository**: [https://github.com/Danushka-Madushan/watchtime](https://github.com/Danushka-Madushan/watchtime)
+- **CI/CD Workflow**: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
+
+> [!TIP]
+> WatchTime works out of the box in **Local Storage Mode** with a bundled seed library. You can add your GitHub credentials at any time in the Settings menu to sync your library across all your devices.
 
 ---
 
-## Key Features & Tour
+## ✨ Key Features
 
-### 🔍 Live OMDb Search & Smart Query Parsing
-- **400ms Debounce**: Protects API rate limits while delivering fluid autocomplete as you type.
-- **Year Extraction**: Automatically extracts release years wrapped in parentheses or trailing 4-digit numbers (e.g. typing `Inception 2010` queries title `Inception` with year filter `2010`).
-- **Media Type Filtering**: Instant toggle between All Types, Movies, and Series directly in the search bar.
-- **Incremental Pagination**: Search results feature an inline "Show more" loader that incrementally fetches additional pages from OMDb.
-- **Duplicate Prevention**: Movie cards in search results detect titles already present in your watchlist and disable duplicate additions with clear visual badges.
+### 🔍 Real-Time OMDb Search & Smart Query Parsing
+- **Debounced Autocomplete**: 400ms query debouncing eliminates redundant network traffic while providing live search suggestions.
+- **Automatic Year Extraction**: Intelligently detects and separates trailing release years (e.g. typing `Inception 2010` searches title `Inception` filtered by year `2010`).
+- **Media Type Segmentation**: Instant filtering between All Media, Movies, and TV Series directly from the search bar.
+- **Duplicate Prevention**: Live badges flag items already present in your collection, preventing accidental re-additions.
+- **Incremental Pagination**: Load additional search results on demand with an inline "Show more" loader.
 
-### 🏷️ Status Filtering & Dynamic Genre Chips
-- **Segmented Status Tabs**: Instant switching between `All`, `To watch`, and `Watched` views, featuring live dynamic counter badges computed from your library.
-- **Wrap-Around Genre Pills**: Automatically compiles unique genres into clean, wrap-around pills with immediate access without horizontal scrolling.
-- **Custom Styled Sorting Dropdown**: Modern select menu with `ArrowUpDown` and `ChevronDown` Lucide icons:
-  - **Date Added** (newest first)
-  - **Title A–Z** (alphabetical)
-  - **Release Year** (most recent release first)
+### 🎬 Polished Movie Details Modal
+- **Comprehensive Metadata**: Displays high-resolution poster art, release year, age rating (`PG-13`, `R`, etc.), runtime, genre badges, director, cast, and date added.
+- **Ratings & Scores**: Live IMDb star ratings, vote counts, and Metascore badges.
+- **Full Plot Synopsis**: Asynchronously retrieves the complete narrative plot when an OMDb API key is configured.
+- **Direct Card Interaction**: Clicking any movie card poster opens the detail modal with full keyboard accessibility (`Enter` / `Space`).
+- **In-Modal Quick Actions**: Toggle watched/unwatched status, change custom poster art, open IMDb in a secure new tab, or remove the title.
 
-### 🎬 Responsive Movie Grid & Rich Card States
-- **Fluid Layout**: 2-to-6 column responsive CSS grid (`grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6`) with uniform 2:3 aspect-ratio poster containers.
-- **Poster Fallback**: Custom inline SVG poster fallback with movie title and release year for missing or broken remote image URLs.
-- **Single-Line Watch Toggle**: Guaranteed single-line **Mark watched** / **Undo** action button across all card dimensions.
-- **Direct Poster Interaction**: Clicking anywhere on the movie poster opens the full Movie Details modal with high-res poster, synopsis, ratings, and cast.
-- **Card Delete Action**: Convenient `w-8 h-8` delete button directly in the card action row with confirmation safety.
-- **Contextual Empty States**: Helpful empty states distinguishing an empty library from active filter queries that return no matches.
+### 🏷️ Intuitive Filters & Dynamic Categorization
+- **Segmented Status Tabs**: Instant switching between `All`, `To watch`, and `Watched` views with dynamic item count badges.
+- **Wrap-Around Genre Badges**: All genres are displayed as wrap-around pills accessible at a glance without horizontal scrolling.
+- **Custom Styled Sort Dropdown**: Modern select menu with `ArrowUpDown` and `ChevronDown` iconography:
+  - *Recently Added* (newest first)
+  - *Title (A–Z)* (alphabetical)
+  - *Newest Release* (chronological by release year)
 
-### 🔍 Polished Movie Details Modal
-- Accessible native HTML `<dialog>` modal with backdrop blur, focus trap, and Escape key handling.
-- High-resolution poster art with safe `referrerPolicy="no-referrer"` handling.
-- Full plot synopsis, IMDb rating with star rating score, Metascore, runtime, content age rating, director, and cast credits.
-- Instant in-modal actions: toggle watched status, change poster, view on IMDb in a new tab, or remove movie.
+### 🖼️ Poster Customization & Safe Fallbacks
+- **Custom Poster Overrides**: Assign custom image URLs with live 2:3 aspect-ratio preview and validation.
+- **One-Click IMDb Refetch**: Retrieve the latest official poster from OMDb at any time.
+- **Graceful Error Handling**: Broken or blocked external image URLs automatically fall back to an inline SVG placeholder.
 
-### 🖼️ Poster Customization Modal
-- Accessible native HTML `<dialog>` modal with keyboard escape handling and backdrop blur.
-- Live URL preview with protocol validation.
-- One-click **Refetch from IMDb** button that retrieves the latest official poster URL from OMDb.
+### 🔄 GitHub Cloud Sync Engine
+- **GitHub Contents API Integration**: Synchronizes your collection to `data/movies.json` in your repository.
+- **Serialized Commit Queue (`saveChain`)**: Guarantees atomic, sequential commits via an in-memory Promise queue, eliminating Git blob SHA collisions and `409 Conflict` errors during rapid edits.
+- **Optimistic UI**: Interface updates instantly while synchronization proceeds in the background.
 
-### ⚙️ GitHub Synchronization & Settings Dialog
-- **GitHub Contents API Integration**: Synchronizes your collection directly with `data/movies.json` in your chosen GitHub repository and branch.
-- **Serialized Commit Queue (`saveChain`)**: Prevents race conditions and GitHub commit SHA collisions by serializing concurrent mutations through a Promise queue.
-- **Masked Credentials UI**: Passwords and access tokens remain masked with `type="password"` inputs and interactive show/hide visibility toggles.
-- **Test Connection Action**: Validates token permissions and repository access with informative feedback before saving.
-
-### 🔔 Accessible Toast Feedback
-- Transient, accessible notifications for operations including saving, synchronization, poster updates, deletions, and network errors.
-
-### 🌓 Adaptive Light & Dark Theme
-- Automatic detection of system color scheme (`prefers-color-scheme`).
-- Instant manual toggle in the header persisted in local storage (`watchlist-theme`).
-- Fully coordinated Tailwind CSS v4 design tokens and CSS custom properties.
+### 🌓 Adaptive Theme Engine
+- Seamless transitions between light and dark themes with persistent storage (`localStorage`).
+- Automatic detection of system preference (`prefers-color-scheme`).
+- Powered by native Tailwind CSS v4 `@theme` design tokens and CSS custom properties.
 
 ---
 
-## Technology Stack
+## 🛠️ Technology Stack
 
-| Layer | Technology | Details |
+| Layer | Technology | Purpose |
 |---|---|---|
-| **Runtime & UI** | [React 19](https://react.dev/) | Modern functional components, hooks, concurrent features |
-| **Build Tool** | [Vite 6](https://vitejs.dev/) | Lightning-fast HMR and optimized Rollup production bundling |
-| **Type System** | [TypeScript 5.7](https://www.typescriptlang.org/) | Strict mode with zero `any` types enforced |
-| **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) | `@tailwindcss/vite` integration with `@theme` design tokens |
+| **Frontend Framework** | [React 19](https://react.dev/) | Functional architecture, modern hooks, and state management |
+| **Build & Tooling** | [Vite 6](https://vitejs.dev/) | Lightning-fast HMR and optimized Rollup production bundling |
+| **Language** | [TypeScript 5.7](https://www.typescriptlang.org/) | Strict mode with zero `any` types enforced across the codebase |
+| **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) | Modern CSS tokens, zero-runtime utilities, and CSS variables |
 | **Iconography** | [Lucide React](https://lucide.dev/) | Consistent, accessible SVG icon primitives |
-| **Sanitization** | [DOMPurify](https://github.com/cure53/DOMPurify) | Strict DOM sanitization preventing XSS attacks |
+| **Sanitization** | [DOMPurify](https://github.com/cure53/DOMPurify) | Client-side input sanitization preventing XSS attacks |
+| **Hosting & CI/CD** | [GitHub Actions & Pages](https://pages.github.com/) | Automated build verification and static edge hosting |
 
 ---
 
-## Architecture & Directory Layout
+## 🏗️ Architecture
 
-### Modular Directory Tree
+```mermaid
+flowchart TD
+    User([User Interaction]) --> App[App Shell]
+    
+    subgraph UI [Presentation Layer]
+        App --> Header[Header & Sync Pulse]
+        App --> Search[Debounced SearchBar]
+        App --> Filters[Filters & Sort Bar]
+        App --> Grid[Responsive Movie Grid]
+        App --> Modals[Modals & Dialogs]
+        Modals --> DetailsModal[Movie Details Modal]
+        Modals --> PosterModal[Poster Editor Modal]
+        Modals --> SettingsModal[Settings & Credentials Modal]
+    end
+
+    subgraph State [State & Contexts]
+        ConfigContext[ConfigContext]
+        MoviesContext[MoviesContext]
+        ToastContext[ToastContext]
+    end
+
+    subgraph Services [Service Layer]
+        OMDb[omdbService] -->|Sanitized HTTP| OMDB_API[(OMDb API)]
+        Storage[storageService] -->|Read / Write| LocalStorage[(Browser LocalStorage)]
+        GitHub[githubService] -->|Serialized Queue saveChain| GH_API[(GitHub Contents API)]
+    end
+
+    App -.-> ConfigContext
+    App -.-> MoviesContext
+    App -.-> ToastContext
+
+    MoviesContext --> Storage
+    MoviesContext --> GitHub
+    Search --> OMDb
+    DetailsModal --> OMDb
+```
+
+### Directory Structure
 
 ```
 watchtime/
-├── index.html                 # HTML entry with Content Security Policy & fonts
-├── package.json               # Dependencies and build scripts
-├── tsconfig.json              # Solution TypeScript config
-├── tsconfig.app.json          # Strict TypeScript configuration for src/
-├── tsconfig.node.json         # TypeScript configuration for Vite/tooling
-├── vite.config.ts             # Vite configuration with React & Tailwind plugins
-├── public/
-│   └── favicon.svg            # Vector film icon
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Pages automated build & deployment workflow
 ├── data/
-│   └── movies.json            # Default 90-movie seed library
+│   └── movies.json             # Seed movie collection bundled with production build
+├── public/
+│   └── favicon.svg             # Official vector SVG brand logo
 ├── src/
-│   ├── main.tsx               # Root DOM mount point
-│   ├── App.tsx                # Master container integrating contexts and components
-│   ├── index.css              # Tailwind v4 theme tokens and custom properties
-│   ├── types/
-│   │   ├── movie.ts           # Movie, MediaType, ViewFilter, SortOption
-│   │   ├── config.ts          # AppConfig, RepoInfo, ConnectionTestResult
-│   │   ├── omdb.ts            # OmdbSearchResponse, OmdbDetailResponse, SearchState
-│   │   └── toast.ts           # ToastMessage, ToastType
-│   ├── services/
-│   │   ├── githubService.ts   # GitHub Contents API client, SHA tracking, serialized save queue
-│   │   ├── omdbService.ts     # OMDb API client, search, getById, posterRefetch
-│   │   └── storageService.ts  # LocalStorage wrapper for credentials, theme, and offline data
-│   ├── utils/
-│   │   ├── sanitize.ts        # DOMPurify wrapper and safe URL protocol validator
-│   │   ├── queryParser.ts     # Search query and 4-digit release year extractor
-│   │   └── base64.ts          # Unicode-safe Base64 encoder/decoder for GitHub payloads
-│   ├── context/
-│   │   ├── ConfigContext.tsx  # GitHub PAT & OMDb credential state provider
-│   │   ├── MoviesContext.tsx  # Watchlist library, filtering, sorting, sync state provider
-│   │   └── ToastContext.tsx   # Toast notification dispatch provider
-│   └── components/
-│       ├── Header/
-│       │   └── Header.tsx     # Brand logo, sync status indicator, theme toggle, settings trigger
-│       ├── SearchBar/
-│       │   ├── SearchBar.tsx             # 400ms debounced input, type selector, clear action
-│       │   ├── SearchResultsDropdown.tsx # Autocomplete panel with keyboard light dismiss
-│       │   └── SearchResultCard.tsx      # Individual result item with metadata and Add button
-│       ├── Filters/
-│       │   ├── FilterSortBar.tsx         # Toolbar combining status, genre, and sort controls
-│       │   ├── StatusFilter.tsx          # Segmented tabs (All, To watch, Watched) with counts
-│       │   ├── GenreFilter.tsx           # Dynamic horizontal scrolling genre pill list
-│       │   └── SortSelector.tsx          # Multi-criteria sorting dropdown
-│       ├── MovieGrid/
-│       │   ├── MovieGrid.tsx             # Responsive 2-to-6 column movie layout
-│       │   ├── MovieCard.tsx             # Movie card with watch toggle, edit poster, delete
-│       │   ├── MovieCardSkeleton.tsx     # Animated pulse placeholder skeleton
-│       │   └── EmptyState.tsx            # Contextual empty library & filter state
-│       ├── Modals/
-│       │   ├── PosterModal.tsx           # Custom poster URL input, live preview, IMDb refetch
-│       │   ├── SettingsModal.tsx         # GitHub & OMDb credential configuration dialog
-│       │   └── ConfirmDialog.tsx         # Accessible movie removal confirmation dialog
-│       └── Toast/
-│           ├── ToastContainer.tsx        # Toast notification fixed stack container
-│           └── ToastItem.tsx             # Animated toast notification item
-└── tests/
-    ├── unit/                  # Unit tests for services, contexts, and utils
-    │   └── components/        # Component unit tests (Header, SearchBar, Filters, MovieGrid, Modals)
-    └── stress/                # Concurrency, security, DOM sanitization, and adversarial stress tests
+│   ├── main.tsx                # Application mount point
+│   ├── App.tsx                 # Root application shell & modal orchestration
+│   ├── index.css               # Tailwind CSS v4 design tokens and theme variables
+│   ├── types/                  # Strict TypeScript data models & contracts
+│   │   ├── config.ts           # AppConfig, RepoInfo, ConnectionTestResult
+│   │   ├── movie.ts            # Movie, MediaType, ViewFilter, SortOption
+│   │   ├── omdb.ts             # OMDb API response & search state interfaces
+│   │   └── toast.ts            # Toast notification types
+│   ├── services/               # API clients and persistence
+│   │   ├── githubService.ts    # GitHub Contents API with serialized commit queue
+│   │   ├── omdbService.ts      # OMDb API search, detail, and poster retrieval
+│   │   └── storageService.ts   # LocalStorage persistence wrapper
+│   ├── utils/                  # Pure utility helpers
+│   │   ├── base64.ts           # UTF-8 safe Base64 encoder/decoder
+│   │   ├── queryParser.ts      # Year extraction & search query parsing
+│   │   └── sanitize.ts         # DOMPurify HTML & URL protocol sanitizer
+│   ├── context/                # React context state providers
+│   │   ├── ConfigContext.tsx   # Credentials and API keys state
+│   │   ├── MoviesContext.tsx   # Collection state, filters, sorting & optimistic sync
+│   │   └── ToastContext.tsx    # Reactive feedback notifications
+│   └── components/             # Modular UI components
+│       ├── Header/             # Header, logo, sync pulse, theme toggle
+│       ├── Search/             # Debounced search input & autocomplete dropdown
+│       ├── Filters/            # Status tabs, wrap-around genres, sort selector
+│       ├── MovieGrid/          # Responsive grid, movie card, skeletons, empty state
+│       ├── Modals/             # Movie details, poster editor, settings, confirm dialog
+│       └── Toast/              # Toast notification stack
+├── index.html                  # HTML entry point with Content Security Policy & fonts
+├── package.json                # Dependencies and build scripts
+├── tsconfig.json               # Root TypeScript configuration
+├── tsconfig.app.json           # Strict application TypeScript rules
+├── tsconfig.node.json          # Node / bundler TypeScript rules
+└── vite.config.ts              # Vite configuration with dynamic base path support
 ```
-
-### Key Architectural Patterns
-
-1. **Dual-Mode Component Pattern**:
-   Components (such as `SearchBar`, `FilterSortBar`, `StatusFilter`, `GenreFilter`, and `SortSelector`) accept explicit props for pure, deterministic unit testing, while falling back gracefully to their respective React contexts (`MoviesContext`, `ConfigContext`, `ToastContext`) when rendered in production.
-2. **Optimistic UI Synchronization**:
-   Watchlist mutations (toggle status, delete movie, update poster, add movie) update local state immediately for instant feedback, then asynchronously synchronize with the GitHub repository via the serialized `saveChain` queue.
-3. **Commit Queue & SHA Tracking**:
-   `githubService.ts` maintains an in-memory Promise chain ensuring multiple rapid mutations are committed sequentially without `409 Conflict` errors from stale Git blob SHAs.
 
 ---
 
-## Getting Started
+## ⚡ Getting Started
 
 ### Prerequisites
+- **Node.js**: `v18.0.0` or later (Node 20+ recommended)
+- **npm**: `v9.0.0` or later
 
-- **Node.js**: Version 18.0.0 or higher (Node 20+ recommended).
-- **npm**: Version 9.0.0 or higher.
+### Installation & Local Run
 
-### Installation
-
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/watchtime.git
+   git clone https://github.com/Danushka-Madushan/watchtime.git
    cd watchtime
    ```
 
-2. Install dependencies:
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. Launch the development server:
+3. **Start the local development server**:
    ```bash
    npm run dev
    ```
-   Open your browser and navigate to `http://localhost:5173`.
+   Open your browser at `http://localhost:5173`. In development mode, Vite automatically uses relative base path `./`.
 
 ---
 
-## Available Scripts
+## 📜 Available Scripts
 
-| Command | Action |
-|---|---|
-| `npm run dev` | Starts Vite local development server with Hot Module Replacement (HMR) |
-| `npm run build` | Compiles TypeScript (`tsc`) and generates optimized production bundle in `dist/` |
-| `npm run preview` | Locally serves the production build from `dist/` |
-| `npm run lint` | Performs strict TypeScript type-checking across the entire codebase (`tsc --noEmit`) |
+| Script | Command | Description |
+|---|---|---|
+| `dev` | `npm run dev` | Launches the local development server with instant Hot Module Replacement (HMR) |
+| `build` | `npm run build` | Compiles TypeScript (`tsc`) and outputs production bundle into `dist/` |
+| `lint` | `npm run lint` | Runs strict TypeScript type-checking across the codebase (`tsc --noEmit`) |
+| `preview` | `npm run preview` | Locally previews the production build from `dist/` |
 
 ---
 
-## Credential Configuration Guide
+## ⚙️ Configuration Guide
 
-WatchTime requires no backend server. All credentials are stored securely in your browser's `localStorage` under the key `watchlist-cfg`.
+WatchTime requires zero server setup. All configuration values are stored securely in your browser's `localStorage` under the key `watchlist-cfg`.
 
 ### 1. OMDb API Key Setup
+An OMDb API key is required to query movies, fetch extended plot synopses, and retrieve official poster artwork.
 
-An OMDb API key is required to search for movies, fetch metadata, and download poster imagery.
+1. Obtain a free API key at [omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx).
+2. Activate the key via the confirmation link sent to your email.
+3. Open WatchTime, click the **Settings (gear icon)** in the top header.
+4. Enter your key in the **OMDb API Key** field and click **Save Configuration**.
 
-1. Visit [omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx).
-2. Choose the **FREE (1,000 daily requests)** tier and enter your email address.
-3. Check your inbox for the activation link and verification key.
-4. Open WatchTime, click the **Settings (gear icon)** in the top right header.
-5. Enter your key in the **OMDb API Key** field.
-6. Click **Save Configuration**.
+### 2. GitHub Synchronization (Cloud Storage)
+To synchronize your watchlist across multiple browsers and devices using your own GitHub repository:
 
-> **Note**: WatchTime also checks `localStorage['watchlist-omdb-key']` for backward compatibility with previous versions.
+1. Create a repository on GitHub (e.g. `watchtime`) containing a `data/movies.json` file.
+2. Generate a [Fine-grained Personal Access Token](https://github.com/settings/tokens?type=beta):
+   - **Repository Access**: Select your watchlist repository.
+   - **Repository Permissions**: Grant **Contents: Read and write**.
+3. Open **Settings** in WatchTime and configure:
+   - **GitHub Personal Access Token**: Paste your token (masked by default with show/hide toggle).
+   - **Repository Owner**: Your GitHub username or organization.
+   - **Repository Name**: The repository name (`watchtime`).
+   - **Branch**: Target branch (e.g. `main`).
+4. Click **Test Connection** to verify read/write access.
+5. Click **Save Configuration** to pull your existing movies and enable automatic synchronization.
 
-### 2. GitHub Personal Access Token (PAT) Setup
-
-To sync your watchlist across devices using your own private or public GitHub repository:
-
-1. Create a repository on GitHub (or use an existing one) containing a `data/movies.json` file.
-2. Go to **GitHub Settings** > **Developer Settings** > **Personal Access Tokens** > **Fine-grained tokens** (or [click here](https://github.com/settings/tokens?type=beta)).
-3. Click **Generate new token**:
-   - **Token name**: `WatchTime Sync Token`
-   - **Expiration**: Select desired lifespan (e.g. 90 days or 1 year)
-   - **Repository access**: Select **Only select repositories** and pick your watchlist repository
-   - **Permissions**: Under **Repository permissions**, find **Contents** and select **Read and write**
-4. Click **Generate token** and copy the token starting with `github_pat_` (or classic `ghp_`).
-5. In WatchTime, open **Settings** (gear icon) and configure:
-   - **GitHub Personal Access Token**: Paste your token (input is masked for privacy)
-   - **Repository Owner**: Your GitHub username or organization
-   - **Repository Name**: The repository name (e.g. `watchtime`)
-   - **Branch**: Target branch (default is `main`)
-6. Click **Test Connection** to verify permissions before saving.
-7. Click **Save Configuration**. WatchTime will fetch your `data/movies.json` and sync future additions.
-
-### 3. Local Storage Fallback Mode
-
-If no GitHub token is provided, WatchTime operates in **Local Storage Mode**. The sync indicator in the header will display **Local Mode**, and all watchlist modifications are persisted locally in `localStorage['watchlist-local-movies']`. You can add GitHub credentials at any time to upgrade to cloud sync.
+### 3. Local Storage Mode (Offline)
+If no GitHub credentials are provided, WatchTime operates in **Local Storage Mode**. All changes persist in your browser's `localStorage`. You can transition to GitHub cloud sync at any time without losing data.
 
 ---
 
-## Client-Side Security Hardening
+## 🔒 Security & Hardening
 
-WatchTime implements comprehensive client-side security hardening to prevent Cross-Site Scripting (XSS), token theft, and untrusted protocol execution:
+WatchTime applies comprehensive client-side security measures to protect user credentials and safeguard against code injection:
 
-1. **DOMPurify Sanitization**:
-   All user inputs, movie titles, genres, and text payloads are sanitized using [DOMPurify](https://github.com/cure53/DOMPurify) before rendering. HTML tags and malicious event handlers are stripped.
-2. **Safe URL Protocol Validation**:
-   Custom poster URLs and external links are strictly checked against `http:` and `https:` schemes via `sanitizeUrl()` in `src/utils/sanitize.ts`. Disallowed schemes (`javascript:`, `data:`, `vbscript:`, `file:`) are blocked and replaced with safe defaults.
-3. **Safe External Links**:
-   All outbound links to IMDb or GitHub use `target="_blank" rel="noopener noreferrer"` to prevent tab-nabbing and reverse window hijacking.
-4. **Safe Poster Embeds & Fallbacks**:
-   Movie posters specify `referrerpolicy="no-referrer"` to prevent leaking application referrers to external image hosts. On image load failure, an inline vector SVG fallback renders gracefully without throwing unhandled DOM exceptions.
-5. **Credential Masking in UI**:
-   The Settings dialog uses `type="password"` inputs with visibility toggles for the GitHub PAT and OMDb API key, preventing casual shoulder-surfing.
-6. **Strict Content Security Policy (CSP)**:
-   `index.html` includes a hardened `<meta>` Content Security Policy restricting resource execution:
-   ```html
-   <meta
-     http-equiv="Content-Security-Policy"
-     content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.omdbapi.com https://api.github.com ws: http://localhost:*; object-src 'none'; base-uri 'self';"
-   />
-   ```
+- **DOMPurify Sanitization**: All text content, titles, and genres are sanitized through DOMPurify before DOM insertion to neutralize Cross-Site Scripting (XSS).
+- **Protocol Validation**: Poster URLs and links are validated against an allowlist (`http:`, `https:`). Dangerous schemes (`javascript:`, `data:`, `file:`) are strictly stripped.
+- **Safe Outbound Links**: External links (e.g. IMDb, GitHub) enforce `target="_blank" rel="noopener noreferrer"` to prevent reverse tab-nabbing.
+- **Referrer Privacy**: Movie poster images include `referrerpolicy="no-referrer"` to prevent leaking referrers to external media servers.
+- **Credential Masking**: Sensitive tokens (GitHub PAT and OMDb API key) are masked with `type="password"` inputs and optional eye toggles.
+- **Content Security Policy (CSP)**: `index.html` enforces a strict CSP meta header restricting script execution, style sources, and API connection domains.
 
 ---
 
-## Type Safety & Zero-Any Policy
+## 🎯 Type Safety
 
-WatchTime enforces strict mode TypeScript with zero tolerance for `any` types throughout the application.
+WatchTime strictly adheres to a **Zero-`any` Policy** with full TypeScript strictness enabled:
 
-### Verification Scripts
-
-```bash
-# Run strict TypeScript type checking across the codebase
-npm run lint
-
-# Verify clean production build compilation
-npm run build
-```
-
-### Zero `any` Policy Verification
-
-The TypeScript configuration (`tsconfig.app.json`) enforces strict mode:
 - `strict: true`
 - `noImplicitAny: true`
+- `strictNullChecks: true`
 - `noUncheckedIndexedAccess: true`
+- `noUnusedLocals: true`
 
-You can independently verify that zero `any` declarations exist across the `src/` codebase:
+You can verify that zero `any` declarations exist across the entire codebase at any time:
 
 ```powershell
-# PowerShell zero-any scan
+# PowerShell Zero-Any Audit
 Get-ChildItem -Path "src" -Recurse -Include *.ts,*.tsx | Select-String -Pattern ":\s*any\b|\bas\s+any\b|<any>|any\[\]"
 ```
 
-The scan returns 0 matches, confirming complete type safety throughout the application.
+The audit returns **0 matches**, confirming complete type safety.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
