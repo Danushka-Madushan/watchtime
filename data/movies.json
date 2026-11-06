@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0441773",
+    "title": "Kung Fu Panda",
+    "year": "2008",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDU5MDNiMGItYjVmZi00NDUxLTg2OTktNGE0NzNlNzM4NzgyXkEyXkFqcGc@._V1_QL75_UY562_CR4,0,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt2184339",
     "title": "The Purge",
     "year": "2013",
