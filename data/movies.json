@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt1332653",
+    "title": "The Day of the Triffids",
+    "year": "2009",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTg1MTUwNjUyMV5BMl5BanBnXkFtZTcwNDQ4MzgxMw@@._V1_QL75_UY562_CR9,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Horror",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt1062161",
     "title": "The Hive",
     "year": "2008",
