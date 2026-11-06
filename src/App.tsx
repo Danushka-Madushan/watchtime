@@ -71,9 +71,8 @@ function AppMain({ isSettingsOpen, setIsSettingsOpen }: AppMainProps): React.Rea
 
       {/* 3. Footer */}
       <footer className="mt-auto border-t border-line py-5 text-center text-xs text-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>WatchTime • Vite + React + Tailwind CSS v4 + TypeScript</p>
-          <p className="text-[11px]">Personal movie &amp; series watchlist synchronized to your GitHub repository.</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center">
+          <p>Made with ❤️ by <a href="https://github.com/Danushka-Madushan" target="_blank" rel="noopener noreferrer" className="text-white">Danushka Madushan</a></p>
         </div>
       </footer>
 
