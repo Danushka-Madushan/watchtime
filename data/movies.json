@@ -1,5 +1,33 @@
 [
   {
+    "id": "tt8041270",
+    "title": "Jurassic World: Dominion",
+    "year": "2022",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGExMWU2NWMtNzczYi00NjQ4LTk2YzctZGZkYmRmMDdhMjllXkEyXkFqcGc@._V1_QL75_UY562_CR5,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
+    "id": "tt0163025",
+    "title": "Jurassic Park III",
+    "year": "2001",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2FmMjhlZDYtNmYyMy00NTdjLTlhYzYtZWNlMDY2MmUzOGM2XkEyXkFqcGc@._V1_QL75_UY562_CR1,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt4881806",
     "title": "Jurassic World: Fallen Kingdom",
     "year": "2018",
