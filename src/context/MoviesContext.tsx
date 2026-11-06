@@ -184,7 +184,19 @@ export function MoviesProvider({
         setIsLoading(false);
 
         // First-time onboarding guidance
-        if (!hasOmdb || !hasGitHub) {
+        const hasAnyCredentials = Boolean(config.omdb.trim() || config.token.trim());
+        const alreadyOnboarded =
+          typeof window !== 'undefined' &&
+          window.localStorage.getItem('watchtime_onboarded') === 'true';
+
+        if (!hasAnyCredentials && !alreadyOnboarded) {
+          try {
+            if (typeof window !== 'undefined') {
+              window.localStorage.setItem('watchtime_onboarded', 'true');
+            }
+          } catch {
+            // Ignore localStorage errors
+          }
           showInfo('First time here? Add your OMDb key and GitHub token.', {
             action: onOpenSettings ? { label: 'Open settings', onClick: onOpenSettings } : undefined,
             durationMs: 8000,

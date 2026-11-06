@@ -51,35 +51,28 @@ export function ConfigProvider({
     if (initialConfig) {
       return { ...DEFAULT_CONFIG, ...initialConfig };
     }
-    return DEFAULT_CONFIG;
-  });
-  const [isLoading, setIsLoading] = useState<boolean>(!initialConfig);
-  const [isSaved, setIsSaved] = useState<boolean>(false);
-
-  // Initialize config from localStorage and auto-detect repo on initial mount
-  useEffect(() => {
-    if (initialConfig) {
-      setIsLoading(false);
-      return;
-    }
-
     try {
       const stored = loadConfig();
       const guessed = guessRepo();
-
-      const merged: AppConfig = {
+      return {
         omdb: stored.omdb || '',
         token: stored.token || '',
         owner: stored.owner || guessed.owner || '',
         repo: stored.repo || guessed.repo || '',
         branch: stored.branch || '',
       };
-
-      setConfig(merged);
     } catch (err) {
       console.error('Failed to load initial configuration:', err);
-      setConfig(DEFAULT_CONFIG);
-    } finally {
+      return DEFAULT_CONFIG;
+    }
+  });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isSaved, setIsSaved] = useState<boolean>(false);
+
+  // Sync initialConfig if passed dynamically as a prop
+  useEffect(() => {
+    if (initialConfig) {
+      setConfig((prev) => ({ ...prev, ...initialConfig }));
       setIsLoading(false);
     }
   }, [initialConfig]);
@@ -95,6 +88,13 @@ export function ConfigProvider({
       persistConfig(newConfig);
       setConfig(newConfig);
       setIsSaved(true);
+      try {
+        if (typeof window !== 'undefined') {
+          window.localStorage.setItem('watchtime_onboarded', 'true');
+        }
+      } catch {
+        // Ignore localStorage quota/sandbox errors
+      }
       setTimeout(() => {
         setIsSaved(false);
       }, 2500);

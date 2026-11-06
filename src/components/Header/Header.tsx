@@ -190,7 +190,7 @@ export function Header({
             className="w-9 h-9 rounded-xl shadow-none transition-transform hover:scale-105 object-contain select-none"
           />
           <div>
-            <h1 className="font-black text-xl sm:text-2xl tracking-tight text-ink flex items-center gap-2">
+            <h1 className="text-xl font-bold sm:text-2xl tracking-tight text-ink flex items-center gap-2">
               <span>{title}</span>
               {versionBadge && (
                 <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent text-accent-ink">

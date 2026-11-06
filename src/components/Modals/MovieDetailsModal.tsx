@@ -176,8 +176,8 @@ export function MovieDetailsModal({
   const posterUrl = movie?.poster || details?.Poster || '';
   const hasPoster = Boolean(
     posterUrl &&
-      (posterUrl.startsWith('http://') || posterUrl.startsWith('https://')) &&
-      !posterError
+    (posterUrl.startsWith('http://') || posterUrl.startsWith('https://')) &&
+    !posterError
   );
 
   const genresList: string[] =
@@ -236,9 +236,12 @@ export function MovieDetailsModal({
 
               {/* Watched Badge */}
               {isMovieInWatchlist && movie?.watched && (
-                <div className="absolute top-2 left-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface/95 border border-line text-xs font-semibold text-ink shadow-none backdrop-blur-sm">
-                  <Check className="w-3.5 h-3.5 text-accent shrink-0" aria-hidden="true" />
-                  <span>Watched</span>
+                <div
+                  data-testid="watched-badge"
+                  className="absolute top-2 left-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-red-500/10 border border-red-500/20 text-xs font-semibold text-ink backdrop-blur-sm shadow-none"
+                >
+                  <Check strokeWidth={3} className="w-3.5 h-3.5 text-accent shrink-0" aria-hidden="true" />
+                  <span>WATCHED</span>
                 </div>
               )}
             </div>
@@ -378,11 +381,10 @@ export function MovieDetailsModal({
                 type="button"
                 disabled={isToggling}
                 onClick={handleToggle}
-                className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                  movie?.watched
+                className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${movie?.watched
                     ? 'bg-canvas hover:bg-line text-ink border border-line'
                     : 'bg-accent hover:opacity-90 text-accent-ink shadow-none'
-                } ${isToggling ? 'opacity-60 cursor-wait' : ''}`}
+                  } ${isToggling ? 'opacity-60 cursor-wait' : ''}`}
               >
                 {movie?.watched ? (
                   <>

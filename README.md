@@ -53,7 +53,7 @@ The application is deployed continuously to GitHub Pages using an automated GitH
 
 ### 🔍 Real-Time OMDb Search & Smart Query Parsing
 - **Debounced Autocomplete**: 400ms query debouncing eliminates redundant network traffic while providing live search suggestions.
-- **Automatic Year Extraction**: Intelligently detects and separates trailing release years (e.g. typing `Inception 2010` searches title `Inception` filtered by year `2010`).
+- **Automatic Year Extraction**: Intelligently detects and separates trailing release years (e.g. typing `Pacific Rim 2013` searches title `Pacific Rim` filtered by year `2013`).
 - **Media Type Segmentation**: Instant filtering between All Media, Movies, and TV Series directly from the search bar.
 - **Duplicate Prevention**: Live badges flag items already present in your collection, preventing accidental re-additions.
 - **Incremental Pagination**: Load additional search results on demand with an inline "Show more" loader.

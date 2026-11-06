@@ -121,17 +121,17 @@ export const MovieCard = React.memo(
           {movie.watched && (
             <div
               data-testid="watched-badge"
-              className="absolute top-2 left-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-surface/95 border border-line text-xs font-semibold text-ink backdrop-blur-sm shadow-none"
+              className="absolute top-2 left-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-red-500/10 border border-red-500/20 text-xs font-semibold text-ink backdrop-blur-sm shadow-none"
             >
-              <Check className="w-3.5 h-3.5 text-accent shrink-0" aria-hidden="true" />
-              <span>Watched</span>
+              <Check strokeWidth={3} className="w-3.5 h-3.5 text-accent shrink-0" aria-hidden="true" />
+              <span>WATCHED</span>
             </div>
           )}
 
           {/* Media Type Badge Overlay (if not movie) */}
           {movie.type && movie.type.toLowerCase() !== 'movie' && (
             <div
-              className={`absolute ${movie.watched ? 'top-8' : 'top-2'} left-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-canvas/90 border border-line text-muted backdrop-blur-sm shadow-none`}
+              className={`absolute bottom-2 right-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-500/10 border border-red-500/20 text-white backdrop-blur-sm shadow-none`}
             >
               {movie.type}
             </div>

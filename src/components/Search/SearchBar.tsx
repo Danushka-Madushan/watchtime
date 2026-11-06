@@ -213,8 +213,8 @@ export function SearchBar({ onOpenSettings, onViewDetails, className = '' }: Sea
                 setIsDropdownOpen(true);
               }
             }}
-            placeholder="Search movies or series... (e.g. Inception 2010)"
-            className="w-full pl-10 pr-20 py-2.5 rounded-xl bg-canvas border border-line text-base text-ink placeholder:text-sm sm:placeholder:text-base placeholder-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-cancel-button]:appearance-none"
+            placeholder="Search Movies or Series..."
+            className="w-full pl-10 pr-20 py-2.5 rounded-xl bg-canvas border border-line text-base font-light text-ink placeholder:text-sm sm:placeholder:text-base placeholder-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-cancel-button]:appearance-none"
             aria-label="Search movies or series"
             autoComplete="off"
             spellCheck="false"
