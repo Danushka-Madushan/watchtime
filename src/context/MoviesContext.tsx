@@ -62,7 +62,7 @@ export function MoviesProvider({
   const [syncError, setSyncError] = useState<string | null>(null);
   const [lastSynced, setLastSynced] = useState<Date | null>(null);
 
-  const [view, setView] = useState<ViewFilter>('all');
+  const [view, setView] = useState<ViewFilter>('todo');
   const [genre, setGenre] = useState<string>('all');
   const [sort, setSort] = useState<SortOption>('added');
 
