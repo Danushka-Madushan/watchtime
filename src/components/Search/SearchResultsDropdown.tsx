@@ -39,7 +39,7 @@ export function SearchResultsDropdown({
   return (
     <div
       data-slot="search-results-dropdown"
-      className="absolute left-0 right-0 top-full mt-2 z-50 rounded-2xl border border-line bg-surface shadow-2xl p-4 transition-all max-h-[30rem] flex flex-col overflow-hidden animate-in fade-in slide-in-from-top-2 duration-150"
+      className="absolute left-0 right-0 top-full mt-2 z-50 rounded-2xl border border-line bg-surface shadow-2xl p-4 transition-all max-h-120 flex flex-col overflow-hidden animate-in fade-in slide-in-from-top-2 duration-150"
       role="region"
       aria-label="Search results"
     >
@@ -54,7 +54,7 @@ export function SearchResultsDropdown({
           </span>
         </span>
         {query && (
-          <span className="text-muted truncate max-w-[200px]">
+          <span className="text-muted truncate max-w-50">
             query: &ldquo;{query}&rdquo;
           </span>
         )}
