@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt13443470",
+    "title": "Wednesday",
+    "year": "2022–",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BY2E1NDI5OWEtODJmYi00Nzg2LWI4MjUtODFiMTU2YWViOTU3XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt0358082",
     "title": "Robots",
     "year": "2005",
