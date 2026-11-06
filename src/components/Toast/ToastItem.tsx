@@ -57,11 +57,11 @@ export function ToastItem({ toast, onDismiss }: ToastItemProps): React.ReactElem
       <IconComponent className={`w-5 h-5 shrink-0 mt-0.5 ${style.iconColor}`} aria-hidden={true} />
       <div className="flex-1 space-y-0.5 min-w-0">
         {toast.title && (
-          <h4 className="text-xs font-bold text-ink leading-tight">
+          <h4 className="text-sm font-bold text-ink leading-tight">
             {toast.title}
           </h4>
         )}
-        <p className="text-xs text-muted leading-relaxed break-words">
+        <p className="text-xs sm:text-sm text-muted leading-relaxed break-words">
           {toast.message}
         </p>
         {toast.action && (
@@ -71,7 +71,7 @@ export function ToastItem({ toast, onDismiss }: ToastItemProps): React.ReactElem
               toast.action?.onClick();
               onDismiss(toast.id);
             }}
-            className="text-xs font-semibold text-accent hover:underline inline-block mt-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded cursor-pointer"
+            className="text-xs sm:text-sm font-semibold text-accent hover:underline inline-block mt-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded cursor-pointer"
           >
             {toast.action.label}
           </button>

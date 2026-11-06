@@ -41,9 +41,9 @@ export function SearchResultsDropdown({
       aria-label="Search results"
     >
       {/* Header Info */}
-      <div className="flex items-center justify-between pb-3 mb-2 border-b border-line text-xs">
-        <span className="font-medium text-ink flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-accent" aria-hidden="true" />
+      <div className="flex items-center justify-between pb-3 mb-2 border-b border-line text-xs sm:text-sm">
+        <span className="font-semibold text-ink flex items-center gap-1.5">
+          <Sparkles className="w-4 h-4 text-accent" aria-hidden="true" />
           <span>
             {isLoading
               ? 'Searching titles...'
@@ -57,8 +57,8 @@ export function SearchResultsDropdown({
         )}
       </div>
 
-      {/* Content Container */}
-      <div className="flex-1 overflow-y-auto space-y-2 pr-1 custom-scrollbar">
+      {/* Content Container (Scrollbar Hidden) */}
+      <div className="flex-1 overflow-y-auto space-y-2 pr-1 no-scrollbar">
         {/* Error Banner */}
         {error && (
           <div className="p-4 rounded-xl bg-danger/10 border border-danger/20 text-danger text-xs flex items-start gap-3">
@@ -127,7 +127,7 @@ export function SearchResultsDropdown({
                 void onLoadMore();
               }}
               disabled={isLoadingMore}
-              className="w-full py-2.5 px-4 rounded-xl bg-canvas hover:bg-canvas/80 border border-line text-xs font-semibold text-ink flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-50"
+              className="w-full py-2.5 px-4 rounded-xl bg-canvas hover:bg-line border border-line text-xs sm:text-sm font-semibold text-ink flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-50"
             >
               {isLoadingMore ? (
                 <>

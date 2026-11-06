@@ -218,10 +218,10 @@ export function SettingsModal({
               <Settings className="w-4 h-4" aria-hidden="true" />
             </div>
             <div>
-              <h2 id="settings-modal-title" className="text-base font-bold text-ink">
+              <h2 id="settings-modal-title" className="text-lg font-bold text-ink">
                 Settings & Credentials
               </h2>
-              <p className="text-xs text-muted">
+              <p className="text-xs sm:text-sm text-muted">
                 Credentials are saved only in your browser's local storage.
               </p>
             </div>
@@ -474,15 +474,15 @@ export function SettingsModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 rounded-lg text-xs font-medium text-muted hover:text-ink hover:bg-canvas transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
+                className="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-muted hover:text-ink hover:bg-canvas transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent hover:opacity-90 text-accent-ink text-xs font-semibold shadow-sm transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent hover:bg-red-700 text-accent-ink text-xs sm:text-sm font-semibold shadow-none transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
               >
-                <Check className="w-3.5 h-3.5" aria-hidden="true" />
+                <Check className="w-4 h-4" aria-hidden="true" />
                 <span>Save Settings</span>
               </button>
             </div>

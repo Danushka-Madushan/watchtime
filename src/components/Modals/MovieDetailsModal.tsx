@@ -270,30 +270,30 @@ export function MovieDetailsModal({
                 )}
               </div>
 
-              <h2 className="text-xl sm:text-2xl font-bold text-ink leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-black text-ink leading-tight">
                 {title}
               </h2>
 
-              <p className="text-sm text-muted font-medium mt-0.5">
+              <p className="text-sm sm:text-base text-muted font-medium mt-0.5">
                 Released: {details?.Released && details.Released !== 'N/A' ? details.Released : year}
               </p>
             </div>
 
             {/* Ratings & Score */}
             {details?.imdbRating && details.imdbRating !== 'N/A' && (
-              <div className="flex items-center gap-3 py-2 px-3 rounded-lg bg-canvas border border-line/60">
+              <div className="flex items-center gap-3 py-2 px-3 rounded-lg bg-canvas border border-line">
                 <div className="flex items-center gap-1.5">
                   <Star className="w-4 h-4 text-amber-500 fill-amber-500" aria-hidden="true" />
-                  <span className="text-sm font-bold text-ink">{details.imdbRating}</span>
-                  <span className="text-xs text-muted">/ 10</span>
+                  <span className="text-sm sm:text-base font-bold text-ink">{details.imdbRating}</span>
+                  <span className="text-xs sm:text-sm text-muted">/ 10</span>
                 </div>
                 {details.imdbVotes && details.imdbVotes !== 'N/A' && (
-                  <span className="text-xs text-muted border-l border-line pl-3">
+                  <span className="text-xs sm:text-sm text-muted border-l border-line pl-3">
                     {details.imdbVotes} votes
                   </span>
                 )}
                 {details.Metascore && details.Metascore !== 'N/A' && (
-                  <span className="text-xs font-semibold text-ok ml-auto px-1.5 py-0.5 rounded bg-ok/10 border border-ok/30">
+                  <span className="text-xs sm:text-sm font-bold text-ok ml-auto px-2 py-0.5 rounded bg-ok/10 border border-ok/30">
                     Metascore: {details.Metascore}
                   </span>
                 )}
@@ -306,7 +306,7 @@ export function MovieDetailsModal({
                 {genresList.map((g) => (
                   <span
                     key={g}
-                    className="px-2.5 py-1 rounded-full text-xs font-medium bg-canvas border border-line text-ink"
+                    className="px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-canvas border border-line text-ink"
                   >
                     {g}
                   </span>
@@ -316,18 +316,18 @@ export function MovieDetailsModal({
 
             {/* Synopsis / Plot */}
             <div className="space-y-1.5">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted">
+              <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-muted">
                 Synopsis
               </h3>
               {isLoadingDetails ? (
-                <div className="flex items-center gap-2 text-xs text-muted py-2">
-                  <Loader2 className="w-3.5 h-3.5 animate-spin text-accent" aria-hidden="true" />
+                <div className="flex items-center gap-2 text-xs sm:text-sm text-muted py-2">
+                  <Loader2 className="w-4 h-4 animate-spin text-accent" aria-hidden="true" />
                   <span>Loading plot synopsis...</span>
                 </div>
               ) : details?.Plot && details.Plot !== 'N/A' ? (
-                <p className="text-sm text-ink/90 leading-relaxed">{details.Plot}</p>
+                <p className="text-sm sm:text-base text-ink/90 leading-relaxed">{details.Plot}</p>
               ) : (
-                <p className="text-xs text-muted leading-relaxed italic">
+                <p className="text-xs sm:text-sm text-muted leading-relaxed italic">
                   {hasOmdb
                     ? 'No extended plot synopsis available for this title.'
                     : 'Add your OMDb API key in Settings to automatically fetch the full plot summary, ratings, and cast.'}
@@ -336,28 +336,28 @@ export function MovieDetailsModal({
             </div>
 
             {/* Credits & Cast */}
-            <div className="space-y-2 pt-2 border-t border-line text-xs">
+            <div className="space-y-2 pt-2 border-t border-line text-xs sm:text-sm">
               {details?.Director && details.Director !== 'N/A' && (
                 <div className="flex items-start gap-2">
-                  <User className="w-3.5 h-3.5 text-muted shrink-0 mt-0.5" aria-hidden="true" />
-                  <span className="text-muted shrink-0">Director:</span>
-                  <span className="text-ink font-medium">{details.Director}</span>
+                  <User className="w-4 h-4 text-muted shrink-0 mt-0.5" aria-hidden="true" />
+                  <span className="text-muted shrink-0 font-medium">Director:</span>
+                  <span className="text-ink font-semibold">{details.Director}</span>
                 </div>
               )}
 
               {details?.Actors && details.Actors !== 'N/A' && (
                 <div className="flex items-start gap-2">
-                  <Users className="w-3.5 h-3.5 text-muted shrink-0 mt-0.5" aria-hidden="true" />
-                  <span className="text-muted shrink-0">Cast:</span>
-                  <span className="text-ink font-medium">{details.Actors}</span>
+                  <Users className="w-4 h-4 text-muted shrink-0 mt-0.5" aria-hidden="true" />
+                  <span className="text-muted shrink-0 font-medium">Cast:</span>
+                  <span className="text-ink font-semibold">{details.Actors}</span>
                 </div>
               )}
 
               {movie?.added && (
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-muted shrink-0" aria-hidden="true" />
-                  <span className="text-muted">Added to watchlist:</span>
-                  <span className="text-ink font-medium">{movie.added}</span>
+                  <Calendar className="w-4 h-4 text-muted shrink-0" aria-hidden="true" />
+                  <span className="text-muted font-medium">Added to watchlist:</span>
+                  <span className="text-ink font-semibold">{movie.added}</span>
                 </div>
               )}
             </div>
@@ -371,20 +371,20 @@ export function MovieDetailsModal({
               type="button"
               disabled={isToggling}
               onClick={handleToggle}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+              className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                 movie?.watched
                   ? 'bg-canvas hover:bg-line text-ink border border-line'
-                  : 'bg-accent hover:opacity-90 text-accent-ink shadow-xs'
+                  : 'bg-accent hover:bg-red-700 text-accent-ink shadow-none'
               } ${isToggling ? 'opacity-60 cursor-wait' : ''}`}
             >
               {movie?.watched ? (
                 <>
-                  <RotateCcw className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                  <RotateCcw className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Mark as Unwatched</span>
                 </>
               ) : (
                 <>
-                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                  <CheckCircle2 className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Mark as Watched</span>
                 </>
               )}
@@ -398,25 +398,25 @@ export function MovieDetailsModal({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Open ${title} on IMDb in a new tab`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-muted hover:text-ink bg-canvas hover:bg-line/70 border border-line transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold text-muted hover:text-ink bg-canvas hover:bg-line border border-line transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 <span>IMDb</span>
-                <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                <ExternalLink className="w-4 h-4" aria-hidden="true" />
               </a>
             )}
             <button
               type="button"
               onClick={handleDeleteClick}
               aria-label={`Remove ${title} from watchlist`}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-danger hover:bg-danger/10 border border-danger/30 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-danger"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold text-danger hover:bg-danger/15 border border-danger/40 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-danger"
             >
-              <Trash2 className="w-3.5 h-3.5" aria-hidden="true" />
+              <Trash2 className="w-4 h-4" aria-hidden="true" />
               <span>Remove</span>
             </button>
             <button
               type="button"
               onClick={onClose}
-              className="px-3.5 py-1.5 rounded-lg text-xs font-medium text-muted hover:text-ink hover:bg-canvas transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
+              className="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-muted hover:text-ink hover:bg-canvas transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
             >
               Close
             </button>

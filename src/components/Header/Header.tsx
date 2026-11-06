@@ -118,13 +118,13 @@ export function SyncIndicator(): React.ReactElement {
 
 export function ThemeToggle(): React.ReactElement {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window === 'undefined') return 'light';
+    if (typeof window === 'undefined') return 'dark';
     const saved = loadTheme();
     if (saved === 'dark' || saved === 'light') return saved;
     if (typeof window.matchMedia === 'function') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark';
     }
-    return 'light';
+    return 'dark';
   });
 
   // Apply theme to documentElement
@@ -179,7 +179,7 @@ export function Header({
   return (
     <header
       data-slot="header"
-      className="sticky top-0 z-30 w-full border-b border-line bg-surface/80 backdrop-blur-md transition-colors"
+      className="sticky top-0 z-30 w-full border-b border-line bg-surface/95 backdrop-blur-md transition-colors"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         {/* Brand & App Logo */}
@@ -187,13 +187,13 @@ export function Header({
           <img
             src="./favicon.svg"
             alt="WatchTime Logo"
-            className="w-9 h-9 rounded-xl shadow-xs transition-transform hover:scale-105 object-contain select-none"
+            className="w-9 h-9 rounded-xl shadow-none transition-transform hover:scale-105 object-contain select-none"
           />
           <div>
-            <h1 className="font-bold text-lg tracking-tight text-ink flex items-center gap-2">
+            <h1 className="font-black text-xl sm:text-2xl tracking-tight text-ink flex items-center gap-2">
               <span>{title}</span>
               {versionBadge && (
-                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/20">
+                <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent text-accent-ink">
                   {versionBadge}
                 </span>
               )}

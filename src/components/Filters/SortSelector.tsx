@@ -24,7 +24,7 @@ export function SortSelector({
         Sort movies
       </label>
       <ArrowUpDown
-        className="absolute left-2.5 w-3.5 h-3.5 text-muted pointer-events-none select-none"
+        className="absolute left-3 w-4 h-4 text-muted pointer-events-none select-none"
         aria-hidden="true"
       />
       <select
@@ -34,14 +34,14 @@ export function SortSelector({
           handleSortChange(e.target.value as SortOption)
         }
         aria-label="Sort movies"
-        className="appearance-none bg-surface border border-line text-ink text-xs font-medium rounded-lg pl-8 pr-8 py-1.5 shadow-2xs hover:border-muted/70 hover:bg-canvas/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all cursor-pointer"
+        className="appearance-none bg-surface border border-line text-ink text-xs sm:text-sm font-semibold rounded-lg pl-9 pr-9 py-2 shadow-none hover:border-muted/70 hover:bg-canvas/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all cursor-pointer"
       >
         <option value="added" className="bg-surface text-ink">Recently added</option>
         <option value="title" className="bg-surface text-ink">Title (A–Z)</option>
         <option value="year" className="bg-surface text-ink">Newest release</option>
       </select>
       <ChevronDown
-        className="absolute right-2.5 w-3.5 h-3.5 text-muted pointer-events-none select-none"
+        className="absolute right-3 w-4 h-4 text-muted pointer-events-none select-none"
         aria-hidden="true"
       />
     </div>

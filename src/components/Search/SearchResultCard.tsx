@@ -59,29 +59,29 @@ export function SearchResultCard({
         {/* Text Metadata */}
         <div className="min-w-0 flex-1 space-y-1">
           <h4
-            className="text-sm font-semibold text-ink truncate leading-tight"
+            className="text-sm sm:text-base font-semibold text-ink truncate leading-tight"
             title={item.Title}
           >
             {item.Title}
           </h4>
 
-          <div className="flex items-center gap-2 text-xs text-muted flex-wrap">
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-muted flex-wrap">
             <span className="inline-flex items-center gap-1">
-              <Calendar className="w-3 h-3 text-muted/70" aria-hidden="true" />
+              <Calendar className="w-3.5 h-3.5 text-muted/70" aria-hidden="true" />
               <span>{item.Year}</span>
             </span>
 
             <span className="text-muted/40">•</span>
 
-            <span className="inline-flex items-center gap-1 uppercase tracking-wider text-[10px] font-medium px-1.5 py-0.5 rounded bg-surface border border-line">
+            <span className="inline-flex items-center gap-1 uppercase tracking-wider text-xs font-semibold px-2 py-0.5 rounded bg-surface border border-line">
               {isSeries ? (
                 <>
-                  <Tv className="w-2.5 h-2.5 text-accent" aria-hidden="true" />
+                  <Tv className="w-3 h-3 text-accent" aria-hidden="true" />
                   <span>Series</span>
                 </>
               ) : (
                 <>
-                  <Film className="w-2.5 h-2.5 text-accent" aria-hidden="true" />
+                  <Film className="w-3 h-3 text-accent" aria-hidden="true" />
                   <span>Movie</span>
                 </>
               )}
@@ -95,10 +95,10 @@ export function SearchResultCard({
         {isAdded ? (
           <div
             data-slot="added-badge"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-ok bg-ok/10 border border-ok/20"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-ok bg-ok/10 border border-ok/30"
             title="Already on your watchlist"
           >
-            <Check className="w-3.5 h-3.5" aria-hidden="true" />
+            <Check className="w-4 h-4" aria-hidden="true" />
             <span>On your list</span>
           </div>
         ) : (
@@ -107,17 +107,17 @@ export function SearchResultCard({
             onClick={handleAddClick}
             disabled={isAdding}
             data-slot="add-button"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-accent text-accent-ink hover:opacity-90 active:scale-95 transition-all shadow-xs cursor-pointer disabled:opacity-60"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-accent text-accent-ink hover:bg-red-700 active:scale-95 transition-all shadow-none cursor-pointer disabled:opacity-60"
             aria-label={`Add ${item.Title} to watchlist`}
           >
             {isAdding ? (
               <>
-                <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+                <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
                 <span>Adding...</span>
               </>
             ) : (
               <>
-                <Plus className="w-3.5 h-3.5" aria-hidden="true" />
+                <Plus className="w-4 h-4" aria-hidden="true" />
                 <span>Add</span>
               </>
             )}

@@ -37,7 +37,7 @@ export function StatusFilter({
       role="tablist"
       aria-label="Filter by watch status"
       data-slot="status-filter"
-      className={`inline-flex items-center rounded-xl p-1 bg-surface border border-line shadow-xs ${className}`}
+      className={`inline-flex items-center rounded-xl p-1 bg-surface border border-line shadow-none ${className}`}
     >
       {tabs.map((tab) => {
         const isActive = currentView === tab.key;
@@ -50,21 +50,21 @@ export function StatusFilter({
             aria-pressed={isActive}
             tabIndex={isActive ? 0 : -1}
             onClick={(): void => handleSelect(tab.key)}
-            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer ${
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer ${
               isActive
-                ? 'bg-accent text-accent-ink shadow-xs font-semibold'
-                : 'text-muted hover:text-ink hover:bg-canvas/50'
+                ? 'bg-accent text-accent-ink shadow-none font-bold'
+                : 'text-muted hover:text-ink hover:bg-canvas/60 font-medium'
             }`}
           >
             <Icon
-              className={`w-3.5 h-3.5 ${tab.key === 'done' && !isActive ? 'text-ok' : ''}`}
+              className={`w-4 h-4 ${tab.key === 'done' && !isActive ? 'text-ok' : ''}`}
               aria-hidden={true}
             />
             <span>{tab.label}</span>
             <span
               data-testid={`status-count-${tab.key}`}
-              className={`px-1.5 py-0.5 rounded-full text-[10px] font-semibold transition-colors ${
-                isActive ? 'bg-accent-ink/20 text-accent-ink' : 'bg-canvas text-muted border border-line/60'
+              className={`px-2 py-0.5 rounded-full text-xs font-bold transition-colors ${
+                isActive ? 'bg-white/20 text-accent-ink' : 'bg-canvas text-muted border border-line'
               }`}
             >
               {tab.count}

@@ -56,11 +56,11 @@ export function MovieGrid({
       className={`space-y-4 ${className}`}
     >
       <div className="flex items-center justify-between">
-        <h2 className="text-sm font-semibold text-ink flex items-center gap-2">
+        <h2 className="text-sm sm:text-base font-bold text-ink flex items-center gap-2">
           <Film className="w-4 h-4 text-accent" aria-hidden="true" />
           <span>Movies &amp; Series</span>
         </h2>
-        <span className="text-xs text-muted" data-testid="grid-counter">
+        <span className="text-xs sm:text-sm text-muted font-medium" data-testid="grid-counter">
           {isLoading
             ? 'Loading collection…'
             : isFiltered

@@ -191,11 +191,11 @@ export function PosterModal({
               <Film className="w-4 h-4" aria-hidden="true" />
             </div>
             <div>
-              <h2 id="poster-modal-title" className="text-base font-bold text-ink">
+              <h2 id="poster-modal-title" className="text-lg font-bold text-ink">
                 Edit Poster
               </h2>
               {movie && (
-                <p className="text-xs text-muted truncate max-w-[280px]">
+                <p className="text-xs sm:text-sm text-muted truncate max-w-[280px]">
                   {movie.title} ({movie.year})
                 </p>
               )}
@@ -289,19 +289,19 @@ export function PosterModal({
               type="button"
               onClick={onClose}
               disabled={isSaving}
-              className="px-4 py-2 rounded-lg text-xs font-medium text-muted hover:text-ink hover:bg-canvas transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-muted hover:text-ink hover:bg-canvas transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isSaving || Boolean(validationError)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent hover:opacity-90 text-accent-ink text-xs font-semibold shadow-sm transition-opacity disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent hover:bg-red-700 text-accent-ink text-xs sm:text-sm font-semibold shadow-none transition-opacity disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               {isSaving ? (
-                <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+                <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
               ) : (
-                <Check className="w-3.5 h-3.5" aria-hidden="true" />
+                <Check className="w-4 h-4" aria-hidden="true" />
               )}
               <span>{isSaving ? 'Saving...' : 'Save Poster'}</span>
             </button>

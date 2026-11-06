@@ -125,10 +125,11 @@ function AppMain({ isSettingsOpen, setIsSettingsOpen }: AppMainProps): React.Rea
           confirmLabel="Remove"
           cancelLabel="Keep movie"
           variant="danger"
-          onConfirm={async (): Promise<void> => {
+          onConfirm={(): void => {
             if (deleteConfirmMovie) {
-              await deleteMovie(deleteConfirmMovie.id);
+              const movieToDelete = deleteConfirmMovie;
               setDeleteConfirmMovie(null);
+              void deleteMovie(movieToDelete.id);
             }
           }}
           onCancel={(): void => setDeleteConfirmMovie(null)}

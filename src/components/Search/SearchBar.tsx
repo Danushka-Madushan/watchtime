@@ -212,7 +212,7 @@ export function SearchBar({ onOpenSettings, className = '' }: SearchBarProps): R
               }
             }}
             placeholder="Search movies or series... (e.g. Inception 2010)"
-            className="w-full pl-10 pr-20 py-2.5 rounded-xl bg-canvas border border-line text-sm text-ink placeholder-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors"
+            className="w-full pl-10 pr-20 py-2.5 rounded-xl bg-canvas border border-line text-base text-ink placeholder:text-sm sm:placeholder:text-base placeholder-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-cancel-button]:appearance-none"
             aria-label="Search movies or series"
             autoComplete="off"
             spellCheck="false"
@@ -256,7 +256,7 @@ export function SearchBar({ onOpenSettings, className = '' }: SearchBarProps): R
               setExplicitYear(cleaned);
             }}
             placeholder="Year"
-            className="w-20 px-2.5 py-2.5 rounded-xl bg-canvas border border-line text-sm text-center text-ink placeholder-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors font-mono"
+            className="w-20 px-2.5 py-2.5 rounded-xl bg-canvas border border-line text-sm sm:text-base text-center text-ink placeholder-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors font-mono"
             aria-label="Filter by release year"
             title="Filter by 4-digit release year"
           />
@@ -268,10 +268,10 @@ export function SearchBar({ onOpenSettings, className = '' }: SearchBarProps): R
               role="tab"
               aria-selected={mediaType === ''}
               onClick={(): void => setMediaType('')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                 mediaType === ''
-                  ? 'bg-accent text-accent-ink shadow-sm'
-                  : 'text-muted hover:text-ink'
+                  ? 'bg-accent text-accent-ink shadow-none'
+                  : 'text-muted hover:text-ink hover:bg-surface/50'
               }`}
             >
               All
@@ -281,13 +281,13 @@ export function SearchBar({ onOpenSettings, className = '' }: SearchBarProps): R
               role="tab"
               aria-selected={mediaType === 'movie'}
               onClick={(): void => setMediaType('movie')}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                 mediaType === 'movie'
-                  ? 'bg-accent text-accent-ink shadow-sm'
-                  : 'text-muted hover:text-ink'
+                  ? 'bg-accent text-accent-ink shadow-none'
+                  : 'text-muted hover:text-ink hover:bg-surface/50'
               }`}
             >
-              <Film className="w-3 h-3" aria-hidden="true" />
+              <Film className="w-3.5 h-3.5" aria-hidden="true" />
               <span>Movies</span>
             </button>
             <button
@@ -295,13 +295,13 @@ export function SearchBar({ onOpenSettings, className = '' }: SearchBarProps): R
               role="tab"
               aria-selected={mediaType === 'series'}
               onClick={(): void => setMediaType('series')}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                 mediaType === 'series'
-                  ? 'bg-accent text-accent-ink shadow-sm'
-                  : 'text-muted hover:text-ink'
+                  ? 'bg-accent text-accent-ink shadow-none'
+                  : 'text-muted hover:text-ink hover:bg-surface/50'
               }`}
             >
-              <Tv className="w-3 h-3" aria-hidden="true" />
+              <Tv className="w-3.5 h-3.5" aria-hidden="true" />
               <span>Series</span>
             </button>
           </div>

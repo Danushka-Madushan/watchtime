@@ -76,7 +76,7 @@ export const MovieCard = React.memo(
       <article
         data-slot="movie-card"
         data-testid={`movie-card-${movie.id}`}
-        className={`group relative flex flex-col rounded-xl bg-surface border border-line overflow-hidden shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 ${className}`}
+        className={`group relative flex flex-col rounded-xl bg-surface border border-line overflow-hidden shadow-none hover:border-muted/50 transition-all duration-200 hover:-translate-y-0.5 ${className}`}
       >
         {/* Poster Container (Aspect Ratio 2:3) */}
         <div
@@ -123,9 +123,9 @@ export const MovieCard = React.memo(
           {movie.watched && (
             <div
               data-testid="watched-badge"
-              className="absolute top-2 left-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface/90 border border-ok/40 text-[10px] font-semibold text-ok backdrop-blur-sm shadow-xs"
+              className="absolute top-2 left-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface/95 border border-ok/40 text-xs font-bold text-ok backdrop-blur-sm shadow-none"
             >
-              <Check className="w-3 h-3" aria-hidden="true" />
+              <Check className="w-3.5 h-3.5" aria-hidden="true" />
               <span>Watched</span>
             </div>
           )}
@@ -133,7 +133,7 @@ export const MovieCard = React.memo(
           {/* Media Type Badge Overlay (if not movie) */}
           {movie.type && movie.type.toLowerCase() !== 'movie' && (
             <div
-              className={`absolute ${movie.watched ? 'top-8' : 'top-2'} left-2 inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-canvas/90 border border-line text-muted backdrop-blur-sm shadow-xs`}
+              className={`absolute ${movie.watched ? 'top-8' : 'top-2'} left-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-canvas/90 border border-line text-muted backdrop-blur-sm shadow-none`}
             >
               {movie.type}
             </div>
@@ -144,7 +144,7 @@ export const MovieCard = React.memo(
             type="button"
             onClick={handleEditClick}
             aria-label={`Change poster for ${title}`}
-            className="absolute top-2 right-2 p-1.5 rounded-lg bg-surface/85 hover:bg-surface text-muted hover:text-ink border border-line backdrop-blur-sm opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent shadow-xs cursor-pointer"
+            className="absolute top-2 right-2 p-1.5 rounded-lg bg-surface/85 hover:bg-surface text-muted hover:text-ink border border-line backdrop-blur-sm opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent shadow-none cursor-pointer"
           >
             <ImagePlus className="w-3.5 h-3.5" aria-hidden="true" />
           </button>
@@ -153,10 +153,10 @@ export const MovieCard = React.memo(
         {/* Card Metadata */}
         <div className="p-3.5 flex flex-col flex-1 justify-between gap-3">
           <div className="space-y-1">
-            <h3 className="text-sm font-semibold text-ink leading-snug line-clamp-2">
+            <h3 className="text-base font-bold text-ink leading-snug line-clamp-2">
               {title}
             </h3>
-            <p className="text-xs text-muted">
+            <p className="text-xs sm:text-[13px] font-medium text-muted">
               {year} • {genreSummary}
             </p>
           </div>
@@ -168,10 +168,10 @@ export const MovieCard = React.memo(
               disabled={isToggling}
               onClick={handleToggle}
               aria-label={movie.watched ? `Mark ${title} as unwatched` : `Mark ${title} as watched`}
-              className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap shrink-0 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                 movie.watched
                   ? 'bg-canvas hover:bg-line text-ink border border-line'
-                  : 'bg-accent hover:opacity-90 text-accent-ink shadow-xs'
+                  : 'bg-accent hover:bg-red-700 text-accent-ink shadow-none'
               } ${isToggling ? 'opacity-60 cursor-wait' : ''}`}
             >
               {movie.watched ? (
@@ -191,7 +191,7 @@ export const MovieCard = React.memo(
               type="button"
               onClick={handleDeleteClick}
               aria-label={`Remove ${title}`}
-              className="w-8 h-8 flex items-center justify-center rounded-lg text-muted hover:text-danger bg-canvas hover:bg-danger/10 border border-line/60 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-danger shrink-0"
+              className="w-8 h-8 flex items-center justify-center rounded-lg text-muted hover:text-danger bg-canvas hover:bg-danger/15 border border-line transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-danger shrink-0"
             >
               <Trash2 className="w-4 h-4" aria-hidden="true" />
             </button>

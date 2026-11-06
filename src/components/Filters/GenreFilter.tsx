@@ -23,16 +23,16 @@ export function GenreFilter({
     <nav
       aria-label="Filter by genre"
       data-slot="genre-filter"
-      className={`flex flex-wrap items-center gap-1.5 text-xs ${className}`}
+      className={`flex flex-wrap items-center gap-1.5 text-xs sm:text-sm ${className}`}
     >
       <button
         type="button"
         onClick={(): void => handleSelect('all')}
         aria-pressed={currentGenre === 'all'}
-        className={`px-2.5 py-1 rounded-full whitespace-nowrap text-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+        className={`px-3 py-1 rounded-full whitespace-nowrap text-xs sm:text-sm transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
           currentGenre === 'all'
-            ? 'bg-accent text-accent-ink border border-transparent font-medium shadow-xs'
-            : 'bg-surface text-muted hover:text-ink border border-line hover:border-muted/50'
+            ? 'bg-accent text-accent-ink border border-transparent font-bold shadow-none'
+            : 'bg-surface text-muted hover:text-ink border border-line hover:border-muted/60 font-medium'
         }`}
       >
         All Genres
@@ -45,10 +45,10 @@ export function GenreFilter({
             type="button"
             onClick={(): void => handleSelect(g)}
             aria-pressed={isActive}
-            className={`px-2.5 py-1 rounded-full whitespace-nowrap text-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+            className={`px-3 py-1 rounded-full whitespace-nowrap text-xs sm:text-sm transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
               isActive
-                ? 'bg-accent text-accent-ink border border-transparent font-medium shadow-xs'
-                : 'bg-surface text-muted hover:text-ink border border-line hover:border-muted/50'
+                ? 'bg-accent text-accent-ink border border-transparent font-bold shadow-none'
+                : 'bg-surface text-muted hover:text-ink border border-line hover:border-muted/60 font-medium'
             }`}
           >
             {g}

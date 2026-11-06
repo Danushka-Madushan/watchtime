@@ -42,7 +42,6 @@ Enriched with real-time metadata from the OMDb API, WatchTime offers instant sea
 The application is deployed continuously to GitHub Pages using an automated GitHub Actions CI/CD pipeline.
 
 - **Production URL**: [https://Danushka-Madushan.github.io/watchtime/](https://Danushka-Madushan.github.io/watchtime/)
-- **Repository**: [https://github.com/Danushka-Madushan/watchtime](https://github.com/Danushka-Madushan/watchtime)
 - **CI/CD Workflow**: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
 
 > [!TIP]

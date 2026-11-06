@@ -99,8 +99,8 @@ export function ConfirmDialog({
 
   const isDanger = variant === 'danger';
   const confirmButtonClass = isDanger
-    ? 'inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold text-white shadow-sm transition-opacity focus-visible:outline-none focus-visible:ring-2 disabled:opacity-50 cursor-pointer bg-danger hover:opacity-90 focus-visible:ring-danger'
-    : 'inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold text-white shadow-sm transition-opacity focus-visible:outline-none focus-visible:ring-2 disabled:opacity-50 cursor-pointer bg-accent hover:opacity-90 focus-visible:ring-accent';
+    ? 'inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-white shadow-none transition-opacity focus-visible:outline-none focus-visible:ring-2 disabled:opacity-50 cursor-pointer bg-danger hover:bg-red-700 focus-visible:ring-danger'
+    : 'inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-white shadow-none transition-opacity focus-visible:outline-none focus-visible:ring-2 disabled:opacity-50 cursor-pointer bg-accent hover:bg-red-700 focus-visible:ring-accent';
 
   return (
     <dialog
@@ -129,10 +129,10 @@ export function ConfirmDialog({
             )}
           </div>
           <div className="flex-1 space-y-1">
-            <h2 id="confirm-dialog-title" className="text-base font-bold text-ink">
+            <h2 id="confirm-dialog-title" className="text-lg font-bold text-ink">
               {title}
             </h2>
-            <div id="confirm-dialog-description" className="text-xs sm:text-sm text-muted leading-relaxed">
+            <div id="confirm-dialog-description" className="text-sm sm:text-base text-muted leading-relaxed">
               {message}
             </div>
           </div>
@@ -154,7 +154,7 @@ export function ConfirmDialog({
             type="button"
             onClick={onCancel}
             disabled={isSubmitting}
-            className="px-4 py-2 rounded-lg text-xs font-medium text-ink bg-canvas hover:bg-line border border-line transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
+            className="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-ink bg-canvas hover:bg-line border border-line transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
           >
             {cancelLabel}
           </button>
@@ -165,7 +165,7 @@ export function ConfirmDialog({
             className={confirmButtonClass}
           >
             {isSubmitting ? (
-              <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden={true} />
+              <Loader2 className="w-4 h-4 animate-spin" aria-hidden={true} />
             ) : null}
             <span>{confirmLabel}</span>
           </button>
