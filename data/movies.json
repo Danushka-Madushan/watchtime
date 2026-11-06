@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt2364582",
+    "title": "Agents of S.H.I.E.L.D.",
+    "year": "2013–2020",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTkwODYyMjgzOV5BMl5BanBnXkFtZTgwODAzMTE5MjE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt20969586",
     "title": "Thunderbolts*",
     "year": "2025",
