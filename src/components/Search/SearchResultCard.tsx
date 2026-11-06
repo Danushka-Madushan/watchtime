@@ -1,17 +1,20 @@
 import React, { useState, useCallback } from 'react';
 import { Film, Calendar, Tv, Plus, Check, Loader2 } from 'lucide-react';
 import type { OmdbSearchResultItem } from '../../types/omdb';
+import type { Movie, MediaType } from '../../types/movie';
 
 export interface SearchResultCardProps {
   item: OmdbSearchResultItem;
   isAdded: boolean;
   onAdd: (imdbID: string) => Promise<void>;
+  onViewDetails?: (movie: Movie) => void;
 }
 
 export function SearchResultCard({
   item,
   isAdded,
   onAdd,
+  onViewDetails,
 }: SearchResultCardProps): React.ReactElement {
   const [imageError, setImageError] = useState<boolean>(false);
   const [isAdding, setIsAdding] = useState<boolean>(false);
@@ -28,6 +31,23 @@ export function SearchResultCard({
     }
   }, [isAdded, isAdding, onAdd, item.imdbID]);
 
+  const handlePosterClick = useCallback((): void => {
+    if (!onViewDetails) return;
+    const cleanType = typeof item.Type === 'string' ? item.Type.toLowerCase() : '';
+    const mediaType: MediaType = cleanType === 'series' ? 'series' : 'movie';
+    const previewMovie: Movie = {
+      id: item.imdbID,
+      title: item.Title,
+      year: item.Year,
+      type: mediaType,
+      poster: item.Poster && item.Poster !== 'N/A' ? item.Poster.trim() : '',
+      genres: [],
+      watched: false,
+      added: '',
+    };
+    onViewDetails(previewMovie);
+  }, [onViewDetails, item]);
+
   const isSeries = item.Type?.toLowerCase() === 'series';
 
   return (
@@ -38,8 +58,21 @@ export function SearchResultCard({
     >
       {/* Poster & Metadata */}
       <div className="flex items-center gap-3 min-w-0 flex-1">
-        {/* Poster Image with Safe Fallback */}
-        <div className="w-12 h-16 shrink-0 rounded-lg overflow-hidden bg-surface border border-line flex items-center justify-center relative shadow-xs">
+        {/* Poster Image with Safe Fallback - Clickable to view details */}
+        <div
+          onClick={handlePosterClick}
+          onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>): void => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              handlePosterClick();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label={`View movie details for ${item.Title}`}
+          title={`Click to view details for ${item.Title}`}
+          className="w-12 h-16 shrink-0 rounded-lg overflow-hidden bg-surface border border-line flex items-center justify-center relative shadow-none cursor-pointer hover:border-accent hover:opacity-90 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
           {hasValidPoster ? (
             <img
               src={item.Poster}
@@ -59,8 +92,9 @@ export function SearchResultCard({
         {/* Text Metadata */}
         <div className="min-w-0 flex-1 space-y-1">
           <h4
-            className="text-sm sm:text-base font-semibold text-ink truncate leading-tight"
-            title={item.Title}
+            onClick={handlePosterClick}
+            className="text-sm sm:text-base font-semibold text-ink truncate leading-tight cursor-pointer hover:text-accent transition-colors"
+            title={`View details for ${item.Title}`}
           >
             {item.Title}
           </h4>
@@ -107,7 +141,7 @@ export function SearchResultCard({
             onClick={handleAddClick}
             disabled={isAdding}
             data-slot="add-button"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-accent text-accent-ink hover:bg-red-700 active:scale-95 transition-all shadow-none cursor-pointer disabled:opacity-60"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-accent text-accent-ink hover:opacity-90 active:scale-95 transition-all shadow-none cursor-pointer disabled:opacity-60"
             aria-label={`Add ${item.Title} to watchlist`}
           >
             {isAdding ? (

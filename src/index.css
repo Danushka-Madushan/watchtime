@@ -13,17 +13,17 @@
   --color-danger: var(--danger);
 }
 
-/* Netflix Flat Theme (Dark by default) */
+/* Netflix Flat Theme (Dark by default) - Eye-friendly cinema crimson */
 :root {
   --bg: #141414;
   --surface: #181818;
   --ink: #ffffff;
   --muted: #a3a3a3;
   --line: #2e2e2e;
-  --accent: #e50914;
+  --accent: #c41e24;
   --accent-ink: #ffffff;
   --ok: #46d369;
-  --danger: #e50914;
+  --danger: #c41e24;
   color-scheme: dark;
 }
 
@@ -34,10 +34,10 @@
     --ink: #ffffff;
     --muted: #a3a3a3;
     --line: #2e2e2e;
-    --accent: #e50914;
+    --accent: #c41e24;
     --accent-ink: #ffffff;
     --ok: #46d369;
-    --danger: #e50914;
+    --danger: #c41e24;
   }
 }
 
@@ -48,10 +48,10 @@
   --ink: #ffffff;
   --muted: #a3a3a3;
   --line: #2e2e2e;
-  --accent: #e50914;
+  --accent: #c41e24;
   --accent-ink: #ffffff;
   --ok: #46d369;
-  --danger: #e50914;
+  --danger: #c41e24;
   color-scheme: dark;
 }
 
@@ -63,10 +63,10 @@
   --ink: #111827;
   --muted: #6b7280;
   --line: #e5e7eb;
-  --accent: #e50914;
+  --accent: #c41e24;
   --accent-ink: #ffffff;
   --ok: #10b981;
-  --danger: #e50914;
+  --danger: #c41e24;
   color-scheme: light;
 }
 

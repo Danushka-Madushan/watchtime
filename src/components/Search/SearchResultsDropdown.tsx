@@ -2,6 +2,7 @@ import React from 'react';
 import { Loader2, AlertCircle, Film, Sparkles, ChevronDown } from 'lucide-react';
 import { SearchResultCard } from './SearchResultCard';
 import type { OmdbSearchResultItem } from '../../types/omdb';
+import type { Movie } from '../../types/movie';
 
 export interface SearchResultsDropdownProps {
   isOpen: boolean;
@@ -16,6 +17,7 @@ export interface SearchResultsDropdownProps {
   onLoadMore: () => Promise<void>;
   existingMovieIds: Set<string>;
   onOpenSettings?: () => void;
+  onViewDetails?: (movie: Movie) => void;
 }
 
 export function SearchResultsDropdown({
@@ -30,6 +32,7 @@ export function SearchResultsDropdown({
   onLoadMore,
   existingMovieIds,
   onOpenSettings,
+  onViewDetails,
 }: SearchResultsDropdownProps): React.ReactElement | null {
   if (!isOpen) return null;
 
@@ -115,6 +118,7 @@ export function SearchResultsDropdown({
             item={item}
             isAdded={existingMovieIds.has(item.imdbID)}
             onAdd={onAddMovie}
+            onViewDetails={onViewDetails}
           />
         ))}
 

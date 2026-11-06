@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { CheckCircle2 } from 'lucide-react';
 import type { Movie } from './types/movie';
 import { ConfigProvider } from './context/ConfigContext';
 import { ToastProvider } from './context/ToastContext';
@@ -32,7 +31,6 @@ function AppMain({ isSettingsOpen, setIsSettingsOpen }: AppMainProps): React.Rea
   const [detailsModalMovie, setDetailsModalMovie] = useState<Movie | null>(null);
   const [posterModalMovie, setPosterModalMovie] = useState<Movie | null>(null);
   const [deleteConfirmMovie, setDeleteConfirmMovie] = useState<Movie | null>(null);
-  const [showToast, setShowToast] = useState<boolean>(true);
 
   const handleOpenSettings = React.useCallback((): void => {
     setIsSettingsOpen(true);
@@ -58,7 +56,7 @@ function AppMain({ isSettingsOpen, setIsSettingsOpen }: AppMainProps): React.Rea
       {/* 2. Main Content Container */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         {/* Search Bar with debouncing, smart year extraction, media filter chips, and live results dropdown */}
-        <SearchBar onOpenSettings={handleOpenSettings} />
+        <SearchBar onOpenSettings={handleOpenSettings} onViewDetails={handleViewDetails} />
 
         {/* Filter and Sort Toolbar */}
         <FilterSortBar />
@@ -136,36 +134,7 @@ function AppMain({ isSettingsOpen, setIsSettingsOpen }: AppMainProps): React.Rea
         />
       </div>
 
-      {/* 5. Baseline Feedback Notification Host */}
-      {showToast && (
-        <aside
-          id="toast-root"
-          data-slot="toast-host"
-          role="status"
-          aria-live="polite"
-          className="fixed bottom-4 right-4 z-50 max-w-sm w-full p-4 pointer-events-auto"
-        >
-          <div className="rounded-xl border border-ok/30 bg-surface/95 text-ink shadow-xl p-4 flex items-start gap-3 backdrop-blur-md">
-            <CheckCircle2 className="w-5 h-5 text-ok shrink-0 mt-0.5" aria-hidden="true" />
-            <div className="flex-1 space-y-1">
-              <p className="text-xs font-semibold text-ink">WatchTime Ready</p>
-              <p className="text-xs text-muted">
-                Tailwind CSS v4 &amp; Lucide React loaded successfully. All component slots active.
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={(): void => setShowToast(false)}
-              aria-label="Dismiss toast"
-              className="text-muted hover:text-ink text-xs p-1 cursor-pointer"
-            >
-              ✕
-            </button>
-          </div>
-        </aside>
-      )}
-
-      {/* 6. Global Toast Notification Stack */}
+      {/* Global Toast Notification Stack */}
       <ToastContainer position="bottom-right" />
     </div>
   );

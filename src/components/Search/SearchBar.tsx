@@ -6,15 +6,17 @@ import { searchMovies } from '../../services/omdbService';
 import { parseSearchQuery } from '../../utils/queryParser';
 import { SearchResultsDropdown } from './SearchResultsDropdown';
 import type { OmdbSearchResultItem } from '../../types/omdb';
+import type { Movie } from '../../types/movie';
 
 export type SearchMediaType = '' | 'movie' | 'series';
 
 export interface SearchBarProps {
   onOpenSettings?: () => void;
+  onViewDetails?: (movie: Movie) => void;
   className?: string;
 }
 
-export function SearchBar({ onOpenSettings, className = '' }: SearchBarProps): React.ReactElement {
+export function SearchBar({ onOpenSettings, onViewDetails, className = '' }: SearchBarProps): React.ReactElement {
   const { config, hasOmdb } = useConfig();
   const { movies, addMovie } = useMovies();
 
@@ -322,6 +324,7 @@ export function SearchBar({ onOpenSettings, className = '' }: SearchBarProps): R
         onLoadMore={handleLoadMore}
         existingMovieIds={existingMovieIds}
         onOpenSettings={onOpenSettings}
+        onViewDetails={onViewDetails}
       />
     </div>
   );

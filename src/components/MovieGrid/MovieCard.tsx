@@ -101,9 +101,7 @@ export const MovieCard = React.memo(
               loading="lazy"
               referrerPolicy="no-referrer"
               onError={(): void => setImgError(true)}
-              className={`w-full h-full object-cover transition-opacity duration-200 ${
-                movie.watched ? 'opacity-45' : 'opacity-100'
-              }`}
+              className="w-full h-full object-cover"
             />
           ) : (
             <div
@@ -112,7 +110,7 @@ export const MovieCard = React.memo(
               className="w-full h-full bg-line/30 flex flex-col items-center justify-center p-4 text-center select-none"
             >
               <Film className="w-10 h-10 text-muted/50 mb-2" aria-hidden={true} />
-              <span className="text-xs font-medium text-muted line-clamp-3">{title}</span>
+              <span className="text-sm font-semibold text-muted line-clamp-3">{title}</span>
               <span className="text-[10px] text-muted/70 uppercase tracking-wider mt-1.5 font-semibold">
                 No Poster
               </span>
@@ -123,9 +121,9 @@ export const MovieCard = React.memo(
           {movie.watched && (
             <div
               data-testid="watched-badge"
-              className="absolute top-2 left-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface/95 border border-ok/40 text-xs font-bold text-ok backdrop-blur-sm shadow-none"
+              className="absolute top-2 left-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-surface/95 border border-line text-xs font-semibold text-ink backdrop-blur-sm shadow-none"
             >
-              <Check className="w-3.5 h-3.5" aria-hidden="true" />
+              <Check className="w-3.5 h-3.5 text-accent shrink-0" aria-hidden="true" />
               <span>Watched</span>
             </div>
           )}
@@ -168,21 +166,21 @@ export const MovieCard = React.memo(
               disabled={isToggling}
               onClick={handleToggle}
               aria-label={movie.watched ? `Mark ${title} as unwatched` : `Mark ${title} as watched`}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+              className={`flex-1 min-w-0 inline-flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                 movie.watched
                   ? 'bg-canvas hover:bg-line text-ink border border-line'
-                  : 'bg-accent hover:bg-red-700 text-accent-ink shadow-none'
+                  : 'bg-accent hover:opacity-90 text-accent-ink shadow-none'
               } ${isToggling ? 'opacity-60 cursor-wait' : ''}`}
             >
               {movie.watched ? (
                 <>
                   <RotateCcw className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                  <span className="whitespace-nowrap">Undo</span>
+                  <span className="truncate">Undo</span>
                 </>
               ) : (
                 <>
                   <CheckCircle2 className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                  <span className="whitespace-nowrap">Mark watched</span>
+                  <span className="truncate">Watched</span>
                 </>
               )}
             </button>
