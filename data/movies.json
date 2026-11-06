@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt2283362",
+    "title": "Jumanji: Welcome to the Jungle",
+    "year": "2017",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZjI5MzdmODctYjA4NS00ZmMxLWJlOWUtOGVhMjA0OGMxMWYzXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt0338459",
     "title": "Spy Kids 3: Game Over",
     "year": "2003",
