@@ -1,0 +1,199 @@
+import React, { useState } from 'react';
+import { CheckCircle2 } from 'lucide-react';
+import type { Movie } from './types/movie';
+import { ConfigProvider } from './context/ConfigContext';
+import { ToastProvider } from './context/ToastContext';
+import { MoviesProvider, useMovies } from './context/MoviesContext';
+
+import { Header } from './components/Header';
+import { SearchBar } from './components/Search';
+import { FilterSortBar } from './components/Filters';
+import { MovieGrid } from './components/MovieGrid';
+import {
+  SettingsModal,
+  PosterModal,
+  ConfirmDialog,
+  MovieDetailsModal,
+} from './components/Modals';
+import { ToastContainer } from './components/Toast';
+
+interface AppMainProps {
+  isSettingsOpen: boolean;
+  setIsSettingsOpen: (open: boolean) => void;
+}
+
+/**
+ * AppMain renders the inner application hierarchy with access to MoviesContext.
+ */
+function AppMain({ isSettingsOpen, setIsSettingsOpen }: AppMainProps): React.ReactElement {
+  const { deleteMovie, toggleWatched } = useMovies();
+
+  // Modal dialog states
+  const [detailsModalMovie, setDetailsModalMovie] = useState<Movie | null>(null);
+  const [posterModalMovie, setPosterModalMovie] = useState<Movie | null>(null);
+  const [deleteConfirmMovie, setDeleteConfirmMovie] = useState<Movie | null>(null);
+  const [showToast, setShowToast] = useState<boolean>(true);
+
+  const handleOpenSettings = React.useCallback((): void => {
+    setIsSettingsOpen(true);
+  }, [setIsSettingsOpen]);
+
+  const handleViewDetails = React.useCallback((movie: Movie): void => {
+    setDetailsModalMovie(movie);
+  }, []);
+
+  const handleEditPoster = React.useCallback((movie: Movie): void => {
+    setPosterModalMovie(movie);
+  }, []);
+
+  const handleDeleteMovie = React.useCallback((movie: Movie): void => {
+    setDeleteConfirmMovie(movie);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-canvas text-ink flex flex-col font-sans antialiased selection:bg-accent selection:text-accent-ink transition-colors duration-150">
+      {/* 1. Sticky Header with sync indicator, theme toggle, and settings button */}
+      <Header onOpenSettings={handleOpenSettings} />
+
+      {/* 2. Main Content Container */}
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+        {/* Search Bar with debouncing, smart year extraction, media filter chips, and live results dropdown */}
+        <SearchBar onOpenSettings={handleOpenSettings} />
+
+        {/* Filter and Sort Toolbar */}
+        <FilterSortBar />
+
+        {/* Responsive Movie Grid with skeleton loaders, empty states, and card action handlers */}
+        <MovieGrid
+          onEditPoster={handleEditPoster}
+          onDeleteMovie={handleDeleteMovie}
+          onViewDetails={handleViewDetails}
+        />
+      </main>
+
+      {/* 3. Footer */}
+      <footer className="mt-auto border-t border-line py-5 text-center text-xs text-muted">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p>WatchTime • Vite + React + Tailwind CSS v4 + TypeScript</p>
+          <p className="text-[11px]">Personal movie &amp; series watchlist synchronized to your GitHub repository.</p>
+        </div>
+      </footer>
+
+      {/* 4. Modal Dialogs Host Container */}
+      <div id="modal-root" data-slot="modal-host">
+        {/* Movie Details Modal */}
+        <MovieDetailsModal
+          isOpen={detailsModalMovie !== null}
+          movie={detailsModalMovie}
+          onClose={(): void => setDetailsModalMovie(null)}
+          onToggleWatched={toggleWatched}
+          onEditPoster={(movie): void => {
+            setDetailsModalMovie(null);
+            setPosterModalMovie(movie);
+          }}
+          onDelete={(movie): void => {
+            setDetailsModalMovie(null);
+            setDeleteConfirmMovie(movie);
+          }}
+        />
+
+        {/* Settings & Credentials Modal */}
+        <SettingsModal
+          isOpen={isSettingsOpen}
+          onClose={(): void => setIsSettingsOpen(false)}
+        />
+
+        {/* Poster Editor Modal */}
+        <PosterModal
+          isOpen={posterModalMovie !== null}
+          movie={posterModalMovie}
+          onClose={(): void => setPosterModalMovie(null)}
+        />
+
+        {/* Accessible Confirmation Dialog for Deletions */}
+        <ConfirmDialog
+          isOpen={deleteConfirmMovie !== null}
+          title="Remove from watchlist?"
+          message={
+            deleteConfirmMovie ? (
+              <span>
+                Are you sure you want to remove <strong className="text-ink">{deleteConfirmMovie.title}</strong>{' '}
+                ({deleteConfirmMovie.year}) from your watchlist? This will update your collection.
+              </span>
+            ) : null
+          }
+          confirmLabel="Remove"
+          cancelLabel="Keep movie"
+          variant="danger"
+          onConfirm={async (): Promise<void> => {
+            if (deleteConfirmMovie) {
+              await deleteMovie(deleteConfirmMovie.id);
+              setDeleteConfirmMovie(null);
+            }
+          }}
+          onCancel={(): void => setDeleteConfirmMovie(null)}
+        />
+      </div>
+
+      {/* 5. Baseline Feedback Notification Host */}
+      {showToast && (
+        <aside
+          id="toast-root"
+          data-slot="toast-host"
+          role="status"
+          aria-live="polite"
+          className="fixed bottom-4 right-4 z-50 max-w-sm w-full p-4 pointer-events-auto"
+        >
+          <div className="rounded-xl border border-ok/30 bg-surface/95 text-ink shadow-xl p-4 flex items-start gap-3 backdrop-blur-md">
+            <CheckCircle2 className="w-5 h-5 text-ok shrink-0 mt-0.5" aria-hidden="true" />
+            <div className="flex-1 space-y-1">
+              <p className="text-xs font-semibold text-ink">WatchTime Ready</p>
+              <p className="text-xs text-muted">
+                Tailwind CSS v4 &amp; Lucide React loaded successfully. All component slots active.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={(): void => setShowToast(false)}
+              aria-label="Dismiss toast"
+              className="text-muted hover:text-ink text-xs p-1 cursor-pointer"
+            >
+              ✕
+            </button>
+          </div>
+        </aside>
+      )}
+
+      {/* 6. Global Toast Notification Stack */}
+      <ToastContainer position="bottom-right" />
+    </div>
+  );
+}
+
+/**
+ * AppContent sets up modal state and wraps children with MoviesProvider.
+ */
+function AppContent(): React.ReactElement {
+  const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
+
+  return (
+    <MoviesProvider onOpenSettings={(): void => setIsSettingsOpen(true)}>
+      <AppMain isSettingsOpen={isSettingsOpen} setIsSettingsOpen={setIsSettingsOpen} />
+    </MoviesProvider>
+  );
+}
+
+/**
+ * Root Application Component wrapping providers.
+ */
+export function App(): React.ReactElement {
+  return (
+    <ConfigProvider>
+      <ToastProvider>
+        <AppContent />
+      </ToastProvider>
+    </ConfigProvider>
+  );
+}
+
+export default App;
