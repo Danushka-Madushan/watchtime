@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt23112594",
+    "title": "VisionQuest",
+    "year": "2026",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BY2FlNjIxMDktMGYyZi00NjY3LWI4YjctYTcxNzc2MDUwYjZmXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt0472043",
     "title": "Apocalypto",
     "year": "2006",
