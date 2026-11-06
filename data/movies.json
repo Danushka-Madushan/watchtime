@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0372873",
+    "title": "Dragon Wars: D-War",
+    "year": "2007",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc2OTk1MzUzMl5BMl5BanBnXkFtZTcwNjE0ODI1MQ@@._V1_QL75_UY562_CR2,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-06"
+  },
+  {
     "id": "tt6404896",
     "title": "Constantine: City of Demons",
     "year": "2018–2019",
