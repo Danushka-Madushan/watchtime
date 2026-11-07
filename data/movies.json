@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt10234724",
+    "title": "Moon Knight",
+    "year": "2022",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDAzNmYwZjgtNDc3YS00ZDMyLTk0MjktMTg4MGNmNGU3MjlhXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-07"
+  },
+  {
     "id": "tt6344664",
     "title": "Code Geass: Lelouch of the Re;Surrection",
     "year": "2019",
