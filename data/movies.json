@@ -1,5 +1,33 @@
 [
   {
+    "id": "tt5090568",
+    "title": "Transformers: Rise of the Beasts",
+    "year": "2023",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZTVkZWY5MmItYjY3OS00OWY3LTg2NWEtOWE1NmQ4NGMwZGNlXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-07"
+  },
+  {
+    "id": "tt3371366",
+    "title": "Transformers: The Last Knight",
+    "year": "2017",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYWNlNjU3ZTItYTY3Mi00YTU1LTk4NjQtYjQ3MjFiNjcyODliXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "watched": false,
+    "added": "2026-11-07"
+  },
+  {
     "id": "tt2109248",
     "title": "Transformers: Age of Extinction",
     "year": "2014",
