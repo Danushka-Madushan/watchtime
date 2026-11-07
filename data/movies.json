@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt0994314",
+    "title": "Code Geass: Lelouch of the Rebellion",
+    "year": "2006–2008",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNTk4MWYwNmUtODFjNC00NWJhLWExNGYtMGU4YmRlNzEwOTY1XkEyXkFqcGc@._V1_QL75_UY562_CR7,0,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Drama"
+    ],
+    "watched": false,
+    "added": "2026-11-07"
+  },
+  {
     "id": "tt9419884",
     "title": "Doctor Strange in the Multiverse of Madness",
     "year": "2022",
