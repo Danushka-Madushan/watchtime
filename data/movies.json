@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt6344664",
+    "title": "Code Geass: Lelouch of the Re;Surrection",
+    "year": "2019",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYzI0NTliYTAtNDQyNS00YmY2LWIxZGQtY2FmMWJmNGFjYjcwXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "watched": false,
+    "added": "2026-11-07"
+  },
+  {
     "id": "tt0994314",
     "title": "Code Geass: Lelouch of the Rebellion",
     "year": "2006–2008",
