@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt26674627",
+    "title": "Resident Evil: Death Island",
+    "year": "2023",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzg0OWYwOTMtYjVhNy00NzY0LWJiYTMtMGQ3OTczMmEwZmVhXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "genres": [
+      "Animation",
+      "Action",
+      "Horror"
+    ],
+    "watched": false,
+    "added": "2026-11-09"
+  },
+  {
     "id": "tt0411477",
     "title": "Hellboy II: The Golden Army",
     "year": "2008",
