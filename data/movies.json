@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt1475582",
+    "title": "Sherlock",
+    "year": "2010–2017",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjRhZDdjMDYtMTg5Yy00NGI4LWI3ZDgtYjNkNDc4MzJkNDRjXkEyXkFqcGc@._V1_QL75_UY562_CR22,0,380,562_.jpg",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "watched": false,
+    "added": "2026-11-09"
+  },
+  {
     "id": "tt0418279",
     "title": "Transformers",
     "year": "2007",
