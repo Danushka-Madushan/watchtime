@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt1790809",
+    "title": "Pirates of the Caribbean: Dead Men Tell No Tales",
+    "year": "2017",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTYyMTcxNzc5M15BMl5BanBnXkFtZTgwOTg2ODE2MTI@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-09"
+  },
+  {
     "id": "tt1298650",
     "title": "Pirates of the Caribbean: On Stranger Tides",
     "year": "2011",
