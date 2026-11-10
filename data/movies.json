@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt2034800",
+    "title": "The Great Wall",
+    "year": "2017",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA3MjAzOTQxNF5BMl5BanBnXkFtZTgwOTc5OTY1OTE@._V1_QL75_UX380_CR0,20,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-10"
+  },
+  {
     "id": "tt1216475",
     "title": "Cars 2",
     "year": "2011",
