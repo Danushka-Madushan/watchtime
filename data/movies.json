@@ -1,5 +1,33 @@
 [
   {
+    "id": "tt0100403",
+    "title": "Predator 2",
+    "year": "1990",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjFjMjRkYWUtNmI4YS00ZmMwLWFiMmYtNWViY2RjZjMyODQ4XkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Horror",
+      "Sci-Fi"
+    ],
+    "watched": false,
+    "added": "2026-11-10"
+  },
+  {
+    "id": "tt0370263",
+    "title": "Alien vs. Predator",
+    "year": "2004",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTU4MjIwMTcyMl5BMl5BanBnXkFtZTYwMTYwNDA3._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Horror"
+    ],
+    "watched": false,
+    "added": "2026-11-10"
+  },
+  {
     "id": "tt0093773",
     "title": "Predator",
     "year": "1987",
