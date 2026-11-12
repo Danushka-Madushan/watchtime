@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt27995114",
+    "title": "Dept. Q",
+    "year": "2025–",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWQ3MDQ2MGQtOGM0MC00MzlkLWE0ODQtYzE4Zjc3Mjc1ZWI5XkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "watched": false,
+    "added": "2026-11-12"
+  },
+  {
     "id": "tt28118211",
     "title": "A Good Girl's Guide to Murder",
     "year": "2024–",
