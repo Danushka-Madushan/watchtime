@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt2243973",
+    "title": "Hannibal",
+    "year": "2013–2015",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjBmYjdiMzItNTEwNi00YTI2LTg4YjctOTRjNDYxNTUxNGQ1XkEyXkFqcGc@._V1_QL75_UY562_CR9,0,380,562_.jpg",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Horror"
+    ],
+    "watched": false,
+    "added": "2026-11-18"
+  },
+  {
     "id": "tt31349844",
     "title": "Runner",
     "year": "2026",
