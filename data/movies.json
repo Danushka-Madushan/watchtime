@@ -1,5 +1,19 @@
 [
   {
+    "id": "tt4052886",
+    "title": "Lucifer",
+    "year": "2016–2021",
+    "type": "series",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYzMwNzI3MWItZTIzYi00YjkxLThhOWQtYmUwYjg4NWM0ZWI1XkEyXkFqcGc@._V1_QL75_UY562_CR9,0,380,562_.jpg",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Fantasy"
+    ],
+    "watched": false,
+    "added": "2026-11-23"
+  },
+  {
     "id": "tt0407304",
     "title": "War of the Worlds",
     "year": "2005",
